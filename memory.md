@@ -196,3 +196,8 @@
 
 - 已将 `assets/favicon.svg` 更新为原创的 Task Bar Hero Atlas 图标：深色地图底、金色罗盘符文与青绿色中心点；不使用游戏官方 Logo 或角色资产。
 - 全站 32 个 HTML 页面已统一引用此文件，因此无需逐页改动。推送后 Vercel 会自动发布；浏览器可能因 favicon 缓存需硬刷新后才显示新图标。
+
+## 2026-07-20：GA4 统计启用
+
+- 已配置 GA4 Measurement ID `G-PTMY8DNK37`。`analytics.js` 仅在 `https://taskbarheroatlas.com` 加载 Google tag；本地、预览域名与非 HTTPS 环境不加载。
+- 隐私页已同步为实际行为说明。上线后应在 GA4 Realtime 中打开正式首页确认首个访问事件；如果面向要求同意管理的地区投放广告或开展营销，再补充 Cookie Consent 机制与相应隐私披露。
