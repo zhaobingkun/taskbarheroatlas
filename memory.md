@@ -182,3 +182,17 @@
 - 弱点是长度较 `tbhatlas.com` 更长，但无连字符、可直接理解；在当前单游戏站阶段，这一可读性优先级高于极致短域名。
 - 若注册，建议采用品牌名 `Task Bar Hero Atlas` 或页面中更克制的 `TBH Atlas`，并全站使用“Independent fan guide and tools. Not affiliated with the developer.”免责声明。
 - 精确词出现在域名里不是排名保证；域名选择后仍需依靠标题、H1、工具价值、更新速度、内链和真实引用获得排名。
+
+## 2026-07-19：Vercel 首次部署与域名诊断
+
+- GitHub 的 Vercel 回调已确认 `main` 的提交 `6e3f717` 构建并部署成功；最新生产部署地址为 `https://taskbarheroatlas-qxuc23oe8-zhaobingkuns-projects-b2b82dc8.vercel.app`。
+- 自定义域 `https://taskbarheroatlas.com/` 返回 Vercel `NOT_FOUND`，且响应包含 `x-vercel-error: NOT_FOUND`。这说明 DNS 已到达 Vercel，但该域尚未被正确分配到当前 Vercel 项目的生产部署；不是 GitHub 仓库公开性、代码构建或重新部署失败。
+- 处理顺序：在当前 Vercel 项目的 Settings → Domains 中确认 apex 域状态为 Valid Configuration 且归属 Production；如域名仍绑定在旧项目，先在旧项目解除，再添加到当前项目。用最新 `.vercel.app` 部署地址验证页面正常后，再复测 apex 域和 `www → apex` 跳转。
+- 随后用户反馈默认别名 `taskbarheroatlas.vercel.app` 也不可访问。应在 Vercel 项目中同步确认 Settings → Git 的 Production Branch 为 `main`，在最新部署中使用 Promote to Production（若出现该操作），并检查 Settings → Deployment Protection 没有对 Production 启用 Vercel Authentication。若三者均正确仍不可访问，需以浏览器错误页和 Domains 截图排除项目别名/访问限制配置。
+- 根因已由 Vercel Build and Deployment 截图确认：Framework 为 Other 且 Output Directory 未覆盖时，Vercel 的默认规则是“若 `public/` 存在则发布 `public/`”。仓库的 `public/` 仅有 `assets/rune-hero.png`，但真正的 `index.html` 和所有页面在根目录。因此构建成功却没有可服务首页。修复：在 Output Directory 打开 Override，填写 `.`，保存并重新部署；保持 Root Directory 为 `./`，不要移动或删除现有页面。
+- 修复后公网验收通过：`https://taskbarheroatlas.com/`、`/runes/`、`/robots.txt` 和 `/sitemap.xml` 均返回 HTTP 200。下一步为在 Google Search Console 添加域名资源、验证 DNS、提交 sitemap，并用 URL Inspection 请求首页与核心 Hub 的抓取。
+
+## 2026-07-20：站点图标更新
+
+- 已将 `assets/favicon.svg` 更新为原创的 Task Bar Hero Atlas 图标：深色地图底、金色罗盘符文与青绿色中心点；不使用游戏官方 Logo 或角色资产。
+- 全站 32 个 HTML 页面已统一引用此文件，因此无需逐页改动。推送后 Vercel 会自动发布；浏览器可能因 favicon 缓存需硬刷新后才显示新图标。

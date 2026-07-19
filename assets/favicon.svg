@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="13" fill="#071226"/><path d="M32 9l4.9 17.1L54 32l-17.1 5.9L32 55l-5.9-17.1L9 32l17.1-5.9L32 9z" fill="#63e6de"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Task Bar Hero Atlas">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="5" x2="56" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19223c"/>
+      <stop offset="1" stop-color="#080d1c"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="19" y1="14" x2="47" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe29a"/>
+      <stop offset=".48" stop-color="#f6b83f"/>
+      <stop offset="1" stop-color="#bd6f18"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="12" fill="none" stroke="#38415b" stroke-width="2"/>
+  <path d="M32 9.5 39 25l15.5 7L39 39 32 54.5 25 39 9.5 32 25 25 32 9.5Z" fill="url(#gold)"/>
+  <path d="m32 17.5 3.7 10.8 10.8 3.7-10.8 3.7L32 46.5l-3.7-10.8L17.5 32l10.8-3.7L32 17.5Z" fill="#13192b"/>
+  <circle cx="32" cy="32" r="5.2" fill="#67e6dc"/>
+  <circle cx="32" cy="32" r="2" fill="#eafffd"/>
+  <path d="M12 19h7M45 45h7M45 19h7M12 45h7" stroke="#6a7591" stroke-width="2" stroke-linecap="round"/>
+</svg>
