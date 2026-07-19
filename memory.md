@@ -196,6 +196,7 @@
 
 - 已将 `assets/favicon.svg` 更新为原创的 Task Bar Hero Atlas 图标：深色地图底、金色罗盘符文与青绿色中心点；不使用游戏官方 Logo 或角色资产。
 - 全站 32 个 HTML 页面已统一引用此文件，因此无需逐页改动。推送后 Vercel 会自动发布；浏览器可能因 favicon 缓存需硬刷新后才显示新图标。
+- 已由该 SVG 源导出 `assets/favicon.png`（512×512、RGBA），并将全站 32 个页面的 favicon 引用切换为 PNG；SVG 源保留，便于后续再导出不同尺寸。
 
 ## 2026-07-20：GA4 统计启用
 
