@@ -197,8 +197,17 @@
 - 已将 `assets/favicon.svg` 更新为原创的 Task Bar Hero Atlas 图标：深色地图底、金色罗盘符文与青绿色中心点；不使用游戏官方 Logo 或角色资产。
 - 全站 32 个 HTML 页面已统一引用此文件，因此无需逐页改动。推送后 Vercel 会自动发布；浏览器可能因 favicon 缓存需硬刷新后才显示新图标。
 - 已由该 SVG 源导出 `assets/favicon.png`（512×512、RGBA），并将全站 32 个页面的 favicon 引用切换为 PNG；SVG 源保留，便于后续再导出不同尺寸。
+- 本地预览目录为 `/Users/zhaobingkun/dev/taskbarhero`。PNG 已同步至该目录的 `assets/favicon.png`，其 32 个 HTML 页面也已切换为 PNG 引用；本地预览服务将直接使用它。
+- 修正了本地预览目录保留旧 SVG 的同步遗漏；`dev/taskbarhero/assets/favicon.svg` 现与源项目 SVG 校验一致，PNG 即由这同一新版 SVG 导出。
 
 ## 2026-07-20：GA4 统计启用
 
 - 已配置 GA4 Measurement ID `G-PTMY8DNK37`。`analytics.js` 仅在 `https://taskbarheroatlas.com` 加载 Google tag；本地、预览域名与非 HTTPS 环境不加载。
 - 隐私页已同步为实际行为说明。上线后应在 GA4 Realtime 中打开正式首页确认首个访问事件；如果面向要求同意管理的地区投放广告或开展营销，再补充 Cookie Consent 机制与相应隐私披露。
+
+## 2026-07-20：第一轮内容加厚与版本校正
+
+- 官方 Steam Community 核验显示当前热修为 `v1.00.28`（2026-07-14）：修复特定情况下存档冲突导致的存档损坏，以及 Type B 物品无法在背包重新定位的问题。全站遗留的 `v1.00.17` 标签已统一改为 `v1.00.28`。
+- 已重写 `/updates/`，加入当前热修摘要、官方/镜像来源、影响边界、检查日期和下一轮待验证专题；不从 Bug Fix 推导未公布的平衡、Rune、掉率或刷图结论。
+- 已加厚 `/runes/`、`/rune-tree/` 与 `/guides/exp-farm/`：每页有静态原创配图、版本/证据边界、可重复测试模板、官方来源和 FAQ。原始 HTML 静态检查通过 title、H1、canonical、JSON-LD、带 alt 的图片；4 个页面均有静态 Banner。
+- `sidebar.js` 已避免对已有静态 Banner 的页面再注入重复图片。后续新数据必须标记版本、来源、日期和证据类别。

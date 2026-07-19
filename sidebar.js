@@ -13,7 +13,7 @@ if (!existingAtlasSidebar) {
       return { src: '/assets/atlas-farm-expedition.png', alt: 'Original pixel-art expedition path leading through glowing portals', label: 'FARMING & PROGRESSION' };
     };
     const pageHero = atlasMain.querySelector('.page-hero');
-    if (pageHero) {
+    if (pageHero && !atlasMain.querySelector('.context-banner')) {
       const visual = bannerForPath();
       const banner = document.createElement('figure');
       banner.className = 'context-banner';
@@ -31,7 +31,7 @@ if (!existingAtlasSidebar) {
         <div><p>TOOLS & ROUTES</p><a class="${isActive('/calculators/')}" href="/calculators/"><span>◷</span> Calculators</a><a class="${isActive('/calculators/chest-timer/')}" href="/calculators/chest-timer/"><span>↳</span> Chest Timer</a><a class="${isActive('/drop-rates/')}" href="/drop-rates/"><span>◈</span> Drop sources</a><a class="${isActive('/market/')}" href="/market/"><span>◫</span> Market notes</a></div>
         <div><p>COMMUNITY NOTES</p><a class="${isActive('/builds/')}" href="/builds/"><span>⚔</span> Builds</a><a class="${isActive('/tier-list/')}" href="/tier-list/"><span>≋</span> Tier Lists</a><a class="${isActive('/guides/')}" href="/guides/"><span>→</span> All Guides</a><a class="${isActive('/codes/')}" href="/codes/"><span>⌘</span> Codes check</a></div>
       </nav>
-      <div class="sidebar-status"><span></span><strong>30 PAGE DESK</strong><small>English launch structure<br />Current patch tracked: v1.00.17</small></div>`;
+      <div class="sidebar-status"><span></span><strong>30 PAGE DESK</strong><small>English launch structure<br />Current patch tracked: v1.00.28</small></div>`;
 
     const shell = document.createElement('div');
     shell.className = 'wiki-shell article-shell';
