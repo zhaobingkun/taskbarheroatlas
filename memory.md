@@ -233,3 +233,11 @@
 - `/codes/` 已核验 Steam 商店、DLC 与 Steam Community 官方来源。截至 2026-07-20，未发现可验证的兑换码或兑换入口；页面明确该结论只是当前核验结果，不声称未来不可能有 code。
 - 三页添加静态原创图、FAQ、官方来源、版本与检查日期，并通过 title/H1/canonical/JSON-LD/alt 静态检查；已同步本地预览目录。
 - 提交 `d4871f5` 与首页关键词自然化提交 `8105343` 已于本轮成功推送至 GitHub `main`；Vercel 已具备自动部署触发条件，正式站点是否完成切换仍应以 Vercel Deployment 状态或浏览器硬刷新复核。
+
+## 2026-07-20：PSI 性能与无障碍优化
+
+- PSI 报告的主要移动端瓶颈为首页的 `rune-atlas-tree.png`（约 1.9 MB）和 Google Fonts 的 CSS 内部 `@import` 请求链；桌面端还会下载第二张约 1.8 MB 的角色图。
+- 已将 4 张 Atlas 原创配图转为 WebP（约 72–132 KB）并替换全站 HTML 引用；首页首屏图保留尺寸与 alt、改为高优先级 preload，非首屏图继续 lazy load。
+- 已删除 CSS 内部字体 `@import`，在每个页面 head 加 Google Fonts 预连接和异步字体 stylesheet（保留 noscript 回退）；保留原字体与视觉风格。
+- 首页目录链接提高为 28px 最小高度并留出间距；数据库 eyebrow 对比色调深；首页品牌链接 accessible name 现在以可见的 `TBHATLAS` 开头。
+- `PERFORMANCE-OPTIMIZATION.md` 记录了 P0/P1 已完成项和两项待用户决策：GA4 延迟加载会漏记极短跳出访问；Cloudflare Insights beacon 的缓存告警只能通过关闭对应第三方分析解决。
