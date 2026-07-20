@@ -218,3 +218,9 @@
 - 已加厚 `/pets/`：官方 DLC 页面确认 Supporter Pack 有 Sword、Butterfly、Dragon，拥有即获得被动、无需装备；没有宣称未核验的具体数值或全局强度排序。
 - 已加厚 `/market/`：官方路线图说明市场重开后最高三档物品曾临时限制上架，并计划在完成稳定性检查后于 7 月解除；页面明确这是计划状态，不写成已实施。Trade Ship Pack 的 5 个上架槽位也链接官方 DLC 来源。
 - 三页均新增静态原创配图、检查日期、官方来源、FAQ、唯一 canonical/H1/JSON-LD，并通过静态 SEO 检查。
+
+## 2026-07-20：首页 On-Page SEO 加厚
+
+- 根据首页体检，Title 更新为 `Task Bar Hero Wiki, Builds, Runes & Tools | TBH Atlas`（53 字符）；Description、OG/Twitter 文案与唯一 H1 均强化主词与真实工具意图。
+- 首屏 CTA 已从跳转子页改为首页内 `#chest-timer` 与 `#runes` 锚点，直接承接 Chest Timer 和 Rune helper；首页原本已有站内检索、计时器和 Rune 目标选择，体检的“无交互”判断不完整。
+- 增加“Task Bar Hero Guide / How to use / Current coverage”静态正文与一个官方 Steam 来源链接。静态检查：唯一 H1、无失效 SearchAction、标题 53 字符、正文约 1297 词，满足 1200–1800 词目标区间。
