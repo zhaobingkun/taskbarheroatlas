@@ -224,6 +224,7 @@
 - 根据首页体检，Title 更新为 `Task Bar Hero Wiki, Builds, Runes & Tools | TBH Atlas`（53 字符）；Description、OG/Twitter 文案与唯一 H1 均强化主词与真实工具意图。
 - 首屏 CTA 已从跳转子页改为首页内 `#chest-timer` 与 `#runes` 锚点，直接承接 Chest Timer 和 Rune helper；首页原本已有站内检索、计时器和 Rune 目标选择，体检的“无交互”判断不完整。
 - 增加“Task Bar Hero Guide / How to use / Current coverage”静态正文与一个官方 Steam 来源链接。静态检查：唯一 H1、无失效 SearchAction、标题 53 字符、正文约 1297 词，满足 1200–1800 词目标区间。
+- 后续体检发现完整词组 `Task Bar Hero` 在首页正文中出现 21 次，按 3 词占位密度约 5.05%。已将非必要正文重复改为自然指代，但保留 H1、Title、Description、首段和 3 个意图型 H2；静态可见正文现为约 1256 词、完整词组 10 次，约 2.39% 占位密度。
 
 ## 2026-07-20：第三轮 Beginner、Builds、Codes 内容
 
