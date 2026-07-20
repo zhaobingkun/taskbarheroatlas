@@ -224,3 +224,10 @@
 - 根据首页体检，Title 更新为 `Task Bar Hero Wiki, Builds, Runes & Tools | TBH Atlas`（53 字符）；Description、OG/Twitter 文案与唯一 H1 均强化主词与真实工具意图。
 - 首屏 CTA 已从跳转子页改为首页内 `#chest-timer` 与 `#runes` 锚点，直接承接 Chest Timer 和 Rune helper；首页原本已有站内检索、计时器和 Rune 目标选择，体检的“无交互”判断不完整。
 - 增加“Task Bar Hero Guide / How to use / Current coverage”静态正文与一个官方 Steam 来源链接。静态检查：唯一 H1、无失效 SearchAction、标题 53 字符、正文约 1297 词，满足 1200–1800 词目标区间。
+
+## 2026-07-20：第三轮 Beginner、Builds、Codes 内容
+
+- `/beginner-guide/` 已补官方 DLC 获取事实：Priest 为免费职业 DLC，Hunter 与 Slayer 为单独付费职业 DLC；页面不从可获取性推导职业强度或必买结论。
+- `/builds/` 已改为 Farming、Boss、Survival 三种活动的可测试框架；任何后续命名 Build 都必须带版本、目标、配置和可重复结果。
+- `/codes/` 已核验 Steam 商店、DLC 与 Steam Community 官方来源。截至 2026-07-20，未发现可验证的兑换码或兑换入口；页面明确该结论只是当前核验结果，不声称未来不可能有 code。
+- 三页添加静态原创图、FAQ、官方来源、版本与检查日期，并通过 title/H1/canonical/JSON-LD/alt 静态检查；已同步本地预览目录。
