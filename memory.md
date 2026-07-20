@@ -232,3 +232,4 @@
 - `/builds/` 已改为 Farming、Boss、Survival 三种活动的可测试框架；任何后续命名 Build 都必须带版本、目标、配置和可重复结果。
 - `/codes/` 已核验 Steam 商店、DLC 与 Steam Community 官方来源。截至 2026-07-20，未发现可验证的兑换码或兑换入口；页面明确该结论只是当前核验结果，不声称未来不可能有 code。
 - 三页添加静态原创图、FAQ、官方来源、版本与检查日期，并通过 title/H1/canonical/JSON-LD/alt 静态检查；已同步本地预览目录。
+- 提交 `d4871f5` 与首页关键词自然化提交 `8105343` 已于本轮成功推送至 GitHub `main`；Vercel 已具备自动部署触发条件，正式站点是否完成切换仍应以 Vercel Deployment 状态或浏览器硬刷新复核。
