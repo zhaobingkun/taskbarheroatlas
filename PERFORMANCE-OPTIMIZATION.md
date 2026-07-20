@@ -20,6 +20,13 @@ Expected result: removes approximately 3.4 MB of homepage image transfer in the 
 
 Expected result: resolves the 12 touch-target reports, the contrast report, and the visible-label/accessibility-name report.
 
+## P0.2 — Mobile CSS request chain and responsive LCP image (implemented)
+
+- Inline only the homepage's above-the-fold layout styles (header, mobile navigation, and hero) so the first render does not wait on `styles.css`; continue loading the complete stylesheet asynchronously for the rest of the page.
+- Add 768 px and 960 px WebP variants for the hero, with `srcset`, `sizes`, and a matching responsive preload. A phone can now request a 24–36 KB source instead of the 124 KB desktop source while retaining a 1672 px source for large displays.
+
+Expected result: removes the reported homepage CSS dependency from the render-critical path and further reduces mobile LCP image transfer. It does not change any site interaction or analytics behaviour.
+
 ## P2 — Analytics loading strategy (decision required)
 
 PSI reports 66 KB of unused `gtag.js` during the initial page load. The technical option is to load GA4 only after browser idle time, scrolling, or the first interaction.

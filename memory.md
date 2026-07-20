@@ -241,3 +241,6 @@
 - 已删除 CSS 内部字体 `@import`，在每个页面 head 加 Google Fonts 预连接和异步字体 stylesheet（保留 noscript 回退）；保留原字体与视觉风格。
 - 首页目录链接提高为 28px 最小高度并留出间距；数据库 eyebrow 对比色调深；首页品牌链接 accessible name 现在以可见的 `TBHATLAS` 开头。
 - `PERFORMANCE-OPTIMIZATION.md` 记录了 P0/P1 已完成项和两项待用户决策：GA4 延迟加载会漏记极短跳出访问；Cloudflare Insights beacon 的缓存告警只能通过关闭对应第三方分析解决。
+- 第二次 PSI 复测提升到桌面 Performance 97、移动 72、其余三项均为 100。为继续解决移动端 FCP/LCP，首页已内联首屏关键 CSS，并将完整 `styles.css` 改为异步加载，消除首页渲染关键 CSS 请求链。
+- 新增 768px（约 22 KB）与 960px（约 36 KB）Hero WebP，通过 `srcset`、`sizes` 和响应式 preload 让手机不再下载 124 KB 的桌面图；本地首页与 768px 图片 HTTP 均返回 200。
+- 浏览器控制插件无法访问本机 `127.0.0.1:4173`，但本机 `curl` 验收成功；这是浏览器插件与本地服务的访问隔离，不是页面错误。
