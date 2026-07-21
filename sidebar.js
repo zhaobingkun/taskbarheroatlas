@@ -7,10 +7,10 @@ if (!existingAtlasSidebar) {
     const currentPath = window.location.pathname.replace(/index\.html$/, '') || '/';
     const isActive = (path) => (path === '/' ? currentPath === '/' : currentPath === path || currentPath.startsWith(path)) ? ' is-current' : '';
     const bannerForPath = () => {
-      if (currentPath.startsWith('/runes') || ['/database/', '/skills/'].includes(currentPath)) return { src: '/assets/rune-atlas-tree.png', alt: 'Original pixel-art rune tree glowing over a floating platform', label: 'RUNE & REFERENCE ATLAS' };
-      if (currentPath.startsWith('/builds') || currentPath.startsWith('/tier-list') || currentPath.startsWith('/beginner')) return { src: '/assets/atlas-role-roster.png', alt: 'Original pixel-art fantasy roster with ranger, guardian and arcane scholar roles', label: 'BUILD FIELD ROSTER' };
-      if (currentPath.startsWith('/drops') || currentPath.startsWith('/drop-rates') || ['/gear/', '/market/', '/codes/', '/pets/'].includes(currentPath)) return { src: '/assets/atlas-loot-cache.png', alt: 'Original pixel-art treasure chest with fantasy gear and glowing rune crystal', label: 'LOOT & ITEM DESK' };
-      return { src: '/assets/atlas-farm-expedition.png', alt: 'Original pixel-art expedition path leading through glowing portals', label: 'FARMING & PROGRESSION' };
+      if (currentPath.startsWith('/runes') || ['/database/', '/skills/'].includes(currentPath)) return { src: '/assets/rune-atlas-tree.webp', alt: 'Original pixel-art rune tree glowing over a floating platform', label: 'RUNE & REFERENCE ATLAS' };
+      if (currentPath.startsWith('/builds') || currentPath.startsWith('/tier-list') || currentPath.startsWith('/beginner')) return { src: '/assets/atlas-role-roster.webp', alt: 'Original pixel-art fantasy roster with ranger, guardian and arcane scholar roles', label: 'BUILD FIELD ROSTER' };
+      if (currentPath.startsWith('/drops') || currentPath.startsWith('/drop-rates') || ['/gear/', '/market/', '/codes/', '/pets/'].includes(currentPath)) return { src: '/assets/atlas-loot-cache.webp', alt: 'Original pixel-art treasure chest with fantasy gear and glowing rune crystal', label: 'LOOT & ITEM DESK' };
+      return { src: '/assets/atlas-farm-expedition.webp', alt: 'Original pixel-art expedition path leading through glowing portals', label: 'FARMING & PROGRESSION' };
     };
     const pageHero = atlasMain.querySelector('.page-hero');
     if (pageHero && !atlasMain.querySelector('.context-banner')) {

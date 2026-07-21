@@ -244,3 +244,11 @@
 - 第二次 PSI 复测提升到桌面 Performance 97、移动 72、其余三项均为 100。为继续解决移动端 FCP/LCP，首页已内联首屏关键 CSS，并将完整 `styles.css` 改为异步加载，消除首页渲染关键 CSS 请求链。
 - 新增 768px（约 22 KB）与 960px（约 36 KB）Hero WebP，通过 `srcset`、`sizes` 和响应式 preload 让手机不再下载 124 KB 的桌面图；本地首页与 768px 图片 HTTP 均返回 200。
 - 浏览器控制插件无法访问本机 `127.0.0.1:4173`，但本机 `curl` 验收成功；这是浏览器插件与本地服务的访问隔离，不是页面错误。
+
+## 2026-07-21：图片性能补漏
+
+- 线上首页 HTML 已确认包含响应式 Hero WebP、图片 preload 与异步 `styles.css`，说明 Vercel 生产环境已吃到上一轮首页性能提交。
+- PSI API 本轮长时间未返回，已停止后台 `curl` 请求；不能把本轮 PSI 分数作为已复测结论。
+- 发现 `sidebar.js` 仍会在部分子页注入旧 PNG 横幅，已改为对应 WebP，避免子页下载 1.6–2.1 MB 原图。
+- `/calculators/chest-timer/`、`/drop-rates/`、`/tier-list/` 的 `og:image` 已从旧 `rune-hero.png` 改为现有 WebP 分享图；静态检查确认代码中不再引用旧大 PNG，favicon PNG 除外。
+- GA4 延迟加载和 Cloudflare Insights 关闭仍属于统计取舍项；未在未确认前改动。

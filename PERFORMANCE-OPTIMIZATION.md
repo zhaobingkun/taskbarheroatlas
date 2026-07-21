@@ -27,6 +27,13 @@ Expected result: resolves the 12 touch-target reports, the contrast report, and 
 
 Expected result: removes the reported homepage CSS dependency from the render-critical path and further reduces mobile LCP image transfer. It does not change any site interaction or analytics behaviour.
 
+## P0.3 — Subpage injected artwork payload (implemented)
+
+- Update `sidebar.js` so context banners injected on subpages use the existing WebP artwork instead of the original 1.6–2.1 MB PNG files.
+- Replace the remaining large `rune-hero.png` Open Graph references on Chest Timer, Drop Rates and Tier List with relevant WebP share images.
+
+Expected result: prevents subpages without static banners from downloading the old oversized PNG artwork and keeps shared metadata aligned with the optimized image set.
+
 ## P2 — Analytics loading strategy (decision required)
 
 PSI reports 66 KB of unused `gtag.js` during the initial page load. The technical option is to load GA4 only after browser idle time, scrolling, or the first interaction.
