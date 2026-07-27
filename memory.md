@@ -315,3 +315,10 @@
 - 已给 `sitemap.xml` 的 30 个公开 URL 全部补入 `<lastmod>2026-07-27</lastmod>`，对应本轮全站版本、检查日期和重点内容更新。
 - 本地脚本验证：`<url>`、`<loc>`、`<lastmod>2026-07-27</lastmod>` 数量均为 30。
 - 推送上线后应在 GSC 重新提交 sitemap，并优先请求首页、`/updates/`、`/market/`、`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`、`/guides/exp-farm/` 抓取。
+
+## 2026-07-27：GitHub 推送与线上部署确认
+
+- 本地提交 `456f528` 已成功推送到 GitHub `main`，之前的 `main...origin/main [ahead 1]` 状态已清除。
+- 生产站 `https://taskbarheroatlas.com/` 返回 HTTP 200，`Last-Modified: Mon, 27 Jul 2026 10:17:48 GMT`，`x-vercel-cache: MISS`，说明 Vercel 已开始服务新部署。
+- `https://taskbarheroatlas.com/updates/` 返回 HTTP 200，`Last-Modified: Mon, 27 Jul 2026 10:18:11 GMT`；`https://www.taskbarheroatlas.com/` 仍 308 跳转到裸域。
+- 当前本机对裸域 GET/sitemap 内容读取有间歇 DNS 失败，不能据此判定线上正文为空；应以浏览器、Vercel 部署详情或稍后 `curl` 复查正文内容。
