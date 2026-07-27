@@ -238,6 +238,15 @@
 
 - PSI 报告的主要移动端瓶颈为首页的 `rune-atlas-tree.png`（约 1.9 MB）和 Google Fonts 的 CSS 内部 `@import` 请求链；桌面端还会下载第二张约 1.8 MB 的角色图。
 - 已将 4 张 Atlas 原创配图转为 WebP（约 72–132 KB）并替换全站 HTML 引用；首页首屏图保留尺寸与 alt、改为高优先级 preload，非首屏图继续 lazy load。
+
+## 2026-07-21：首份 Google Search Console 搜索表现信号
+
+- 用户提供的 GSC「过去 3 个月 / 网页搜索」导出实际仅有 2026-07-19 一天的 7 次展示、0 次点击；站点仍处于极早期，不能据此判断 CTR、国家分布或稳定排名趋势。
+- 最强的可行动信号是 `/calculators/chest-timer/`：查询 `task bar hero chest cooldown` 获 3 次展示、平均排名 8.33；页面自身同样是 3 次展示、平均排名 8.33。说明 Google 已把工具页与胸箱冷却意图关联。
+- 首页获得 3 次展示、平均排名 15；`/runes/` 获 2 次展示、平均排名 17。另有 `task bar hero`（平均 15）、`runes task bar hero`（25）与 `task bar hero wiki`（26）的早期测试信号。
+- 现阶段不应根据 7 次展示改写页面或加关键词；Chest Timer 已明确不把 30/60 分钟预设说成官方冷却，继续保留该真实性边界。下一步应观察至少 14 天或达到约 50-100 次展示后，再用 GSC 查询词决定加厚页面；优先顺序为 Chest Timer、Runes/Rune Tree、Beginner Guide/Skills。
+- Query、Page、Country 各维度汇总略有不一致属于 GSC 低量数据的隐私阈值/四舍五入和不同维度聚合现象，不应强行相加比较。
+- 用户报告 GA4 已有约 89 名访问用户。GA4 的浏览器事件可来自直接访问、分享链接、测试或推荐流量，不能视为 Google 自然搜索收录证明；应在 GA4 的 Traffic acquisition 用 `Session source / medium` 区分 `(direct) / (none)`、`google / organic` 与 referral。
 - 已删除 CSS 内部字体 `@import`，在每个页面 head 加 Google Fonts 预连接和异步字体 stylesheet（保留 noscript 回退）；保留原字体与视觉风格。
 - 首页目录链接提高为 28px 最小高度并留出间距；数据库 eyebrow 对比色调深；首页品牌链接 accessible name 现在以可见的 `TBHATLAS` 开头。
 - `PERFORMANCE-OPTIMIZATION.md` 记录了 P0/P1 已完成项和两项待用户决策：GA4 延迟加载会漏记极短跳出访问；Cloudflare Insights beacon 的缓存告警只能通过关闭对应第三方分析解决。
@@ -252,3 +261,57 @@
 - 发现 `sidebar.js` 仍会在部分子页注入旧 PNG 横幅，已改为对应 WebP，避免子页下载 1.6–2.1 MB 原图。
 - `/calculators/chest-timer/`、`/drop-rates/`、`/tier-list/` 的 `og:image` 已从旧 `rune-hero.png` 改为现有 WebP 分享图；静态检查确认代码中不再引用旧大 PNG，favicon PNG 除外。
 - GA4 延迟加载和 Cloudflare Insights 关闭仍属于统计取舍项；未在未确认前改动。
+
+## 2026-07-22：社区推广素材包
+
+- 新增 `OUTREACH-KIT.md`：为 Steam Community、Discord、r/TBHTaskBarHero、r/TaskBarHeroes 准备 Chest Timer 和 Rune guide 的透明披露式分享文案、对应 UTM 链接格式、节奏、规则边界与回复模板。
+- 推广以真实玩家价值和直接相关的问答为前提，不购买外链、不批量复制帖子、不假称官方；优先推广已有早期 GSC 信号的 Chest Timer，再根据反馈推广 Rune guide。
+
+## 2026-07-22：Steam Guide 草稿与账户限制
+
+- Steam 的 Guide 编辑 URL 在未登录/受限状态会落到通用创意工坊浏览页；官方规则也说明受限账户不能创建公开 Steam Guides，解除后仍需遵守游戏社区的拥有/游玩和频率限制。
+- 已新增 `STEAM-GUIDE-BEGINNER-DRAFT.md`：一篇独立的“先找当前卡点、再做单变量测试”的英文新手路线草稿，避免把站内页面原样复制到 Steam。文末仅保留一个可选的 Chest Timer 链接并明确它不是官方冷却数据。
+
+## 2026-07-24：Google 索引与域名规范化复查
+
+- `site:taskbarheroatlas.com` 已出现首页结果，Google 搜索结果标注抓取时间为前一天；因此站点并非完全未收录。GSC 的 Page Indexing / URL Inspection 报告可能仍有延迟，或用户检查的是另一个 URL 版本。
+- 线上首页、`robots.txt` 与 `sitemap.xml` 都返回 HTTP 200；robots 允许抓取，sitemap 使用 apex URL。
+- 发现需要修复的规范化问题：`https://www.taskbarheroatlas.com/` 和裸域首页都返回 200，而全站 canonical 和 sitemap 指向裸域 `https://taskbarheroatlas.com/`。应在 Vercel Settings -> Domains 显式把 `www.taskbarheroatlas.com` 301 Redirect to `taskbarheroatlas.com`（或反向统一到 www 并同步全站 canonical/sitemap），不能继续让两个版本同时返回 200。
+
+## 2026-07-27：本地交付状态复查
+
+- 当前工作区已有 `OUTREACH-KIT.md` 和 `STEAM-GUIDE-BEGINNER-DRAFT.md` 两份本地草稿；内容已包含披露、规则边界、UTM 链接、发布节奏、回复模板、Steam Guide 正文和最终发布检查表。
+- 这些内容只是本地交付草稿，尚未发布到 Steam、Reddit、Discord 或其他外部平台；发布前仍需用户登录对应账号并确认社区规则、Steam 账号权限、当前官方版本和封面图。
+- Git 状态仍有未提交改动：`memory.md`、`OUTREACH-KIT.md`、`STEAM-GUIDE-BEGINNER-DRAFT.md`。
+
+## 2026-07-27：是否需要更新的复查结论
+
+- 需要更新。官方 Steam Community 当前已显示 `Hotfix Update - ver 1.01.02`（Jul 23），而线上 `taskbarheroatlas.com` 首页和 `/updates/` 仍标注 `v1.00.28`、Last checked Jul 20, 2026。
+- 官方页还出现 7 月 25 日起服务器不稳定和物品消失的恢复公告；这属于高优先级玩家风险信息，应在 `/updates/` 和相关安全/market/guide 页面中说明，不应继续只停留在 `v1.00.28` 存档修复语境。
+- 此前记录的 `www.taskbarheroatlas.com` 与裸域同时 200 的规范化问题，当前线上复查显示 `www` 已重定向到裸域；这项不再是待修复重点。
+- 同步需要改：全站版本标签、首页版本文案、`/updates/` patch desk、Steam Guide 草稿中的 checked version/date、以及任何提到 `v1.00.28` 作为当前版本的页面或推广素材。
+
+## 2026-07-27：v1.01.02 内容更新完成
+
+- 已将站内当前版本展示从 `v1.00.28` 同步为 `v1.01.02`，覆盖首页、共享侧栏、核心页面 patch chip、可见检查日期、meta description 与 Article `dateModified`。
+- 已重写 `/updates/`：当前版本标记为 `v1.01.02`，补入 `v1.01.00` 高等级物品交易恢复/平衡更新语境，以及 7 月 25 日后服务器不稳定和物品消失公告的玩家风险提示；继续明确不从 hotfix 推导 Rune、掉率、EXP 路线或永久 build 排名。
+- 已更新 `/market/`：不再把高等级物品交易只写成未来计划，改为按 `v1.01.00` 官方更新标题处理；仍要求价格、流动性和物品状态带时间戳与来源。
+- 已更新 `/gear/`、`/guides/gear-guide/`、`/drops/gear/`：增加物品消失/服务器风险后的库存状态确认提醒，避免玩家在不稳定窗口证据上交易、分解或定价。
+- 已更新 `STEAM-GUIDE-BEGINNER-DRAFT.md` 的检查版本与日期为 `v1.01.02` / July 27, 2026。
+- 顺手补齐 `404.html` 的 meta description 与 canonical，避免 noindex 失效页在基础 SEO 检查中缺项。
+- 静态验证：32 个 HTML 文件均保持单一 H1、title、description、canonical 基础项；关键页面 `index.html`、`updates/index.html`、`market/index.html`、`runes/index.html`、`rune-tree/index.html`、`guides/exp-farm/index.html` 均保留 JSON-LD；站内无旧 `Tracking v1.00.28` 或旧可见 `CHECKED JUL 20/22` 残留。
+- 本地提交已创建；推送 GitHub 时两次连接 `github.com:443` 超时，因此 Vercel 自动部署尚未触发。网络恢复后执行 `git push` 即可发布该提交。
+
+## 2026-07-27：Google 索引状态诊断
+
+- `site:taskbarheroatlas.com` 当前能看到首页结果，但 URL 显示为 `https://www.taskbarheroatlas.com/`，搜索缓存内容仍是 `v1.00.28`，抓取时间显示约 4 天前；因此不是完全未索引，而是首页已入库、子页尚未明显放出，且 Google 尚未看到本地 `v1.01.02` 提交。
+- 当前本地 `main` 仍比 `origin/main` ahead 1，因为 GitHub 推送超时，线上 Vercel 仍停留在 7 月 21-23 日左右的旧部署；这会导致 GSC/Google 看到的页面与本地改动不一致。
+- 线上 robots.txt 允许抓取，sitemap.xml 可列出 30 个主要 URL，`www` 当前会 308 跳到裸域，这些不是主要阻塞点。
+- sitemap 当前没有 `<lastmod>`，且 Google 官方说明会忽略 `priority`/`changefreq`；后续应给重点 URL 补真实 `lastmod`，特别是首页、updates、market、runes、rune-tree、chest-timer 和 exp-farm。
+- 现阶段更可能的原因：新域名和新站时间太短、外部引用少、子页内容大量是版本边界/方法论而非实测数据、Google 需要先评估内容质量与 canonical；不是因为使用 AI 生成内容本身被禁止。
+
+## 2026-07-27：sitemap lastmod 补强
+
+- 已给 `sitemap.xml` 的 30 个公开 URL 全部补入 `<lastmod>2026-07-27</lastmod>`，对应本轮全站版本、检查日期和重点内容更新。
+- 本地脚本验证：`<url>`、`<loc>`、`<lastmod>2026-07-27</lastmod>` 数量均为 30。
+- 推送上线后应在 GSC 重新提交 sitemap，并优先请求首页、`/updates/`、`/market/`、`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`、`/guides/exp-farm/` 抓取。
