@@ -322,3 +322,12 @@
 - 生产站 `https://taskbarheroatlas.com/` 返回 HTTP 200，`Last-Modified: Mon, 27 Jul 2026 10:17:48 GMT`，`x-vercel-cache: MISS`，说明 Vercel 已开始服务新部署。
 - `https://taskbarheroatlas.com/updates/` 返回 HTTP 200，`Last-Modified: Mon, 27 Jul 2026 10:18:11 GMT`；`https://www.taskbarheroatlas.com/` 仍 308 跳转到裸域。
 - 当前本机对裸域 GET/sitemap 内容读取有间歇 DNS 失败，不能据此判定线上正文为空；应以浏览器、Vercel 部署详情或稍后 `curl` 复查正文内容。
+
+## 2026-07-28：GSC 覆盖状态解释与 favicon 404
+
+- 用户收到 GSC 新原因：备用网页（有适当的规范标记）、网页会自动重定向、被 `noindex` 标记排除、未找到 404。
+- 本地验证：sitemap 的 30 个 URL 都有对应 HTML 文件，canonical 均自指到 sitemap URL，且 sitemap URL 中没有 `noindex`。
+- `noindex` 仅存在于 `privacy/index.html` 和 `404.html`，属于低价值/错误页的预期排除，不应作为主页面索引问题处理。
+- `www` 到裸域的 308，以及可能的 HTTP 到 HTTPS、无尾斜杠到尾斜杠，都属于预期重定向；GSC 会把被重定向的 URL 列为“网页会自动重定向”，这不是错误。
+- 线上 `https://taskbarheroatlas.com/favicon.ico` 返回 404；已新增根目录 `favicon.ico` 兜底，避免浏览器和 Google 默认探测 favicon 时产生无意义 404。
+- 后续仍需用户在 GSC 的每个原因里看“示例网址”：如果示例是 `www`、`/privacy/`、`/404.html`、`/favicon.ico` 或旧错误 URL，通常无需紧急处理；如果示例是 sitemap 中的主内容页，再逐条诊断。
