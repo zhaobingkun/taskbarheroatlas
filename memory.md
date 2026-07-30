@@ -394,3 +394,10 @@
 - `/runes/` 重新定位为 Rune Guide Hub，承接 Task Bar Hero runes、best runes、clear-speed、boss-damage、survival 等意图；`/rune-tree/` 重新定位为 TBH Rune Tree / full rune tree / rune map / rune planner 页面，避免两个页面争同一意图。
 - `/calculators/chest-timer/` 加强 chest cooldown vs personal timer 的区别，明确 30/60 min 是个人提醒预设，不是官方冷却数据。
 - `sitemap.xml` 已把上述 6 个 URL 的 `<lastmod>` 更新为 `2026-07-30`。静态验证：6 个改动页面 title、description、canonical、单一 H1、JSON-LD、站内链接目标均通过；全站 32 个 HTML 基础 SEO 检查通过，0 个失败。
+
+## 2026-07-30：GSC 页面更新发布确认
+
+- 已将按 GSC 28 天信号加厚的页面更新提交为 `82a7410 Update SEO pages from GSC signals` 并推送到 GitHub `main`；首次 `git push` 遇到 GitHub `Empty reply from server`，提升权限重试后成功。
+- 线上复查：`https://taskbarheroatlas.com/drop-rates/` 与 `https://taskbarheroatlas.com/builds/` 均返回 HTTP 200，`Last-Modified: Thu, 30 Jul 2026 04:31:55 GMT`，页面源码已显示新 title 和 2026-07-30 更新内容。
+- 线上 `https://taskbarheroatlas.com/sitemap.xml` 返回 HTTP 200，复查内容已包含 6 个改动 URL 的 `<lastmod>2026-07-30</lastmod>`：`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`、`/drop-rates/`、`/builds/`、`/codes/`。
+- 发布后建议在 GSC 重新提交 sitemap，并优先请求抓取 `/drop-rates/`、`/builds/`、`/codes/`、`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`。
