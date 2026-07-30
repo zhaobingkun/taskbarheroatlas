@@ -331,3 +331,66 @@
 - `www` 到裸域的 308，以及可能的 HTTP 到 HTTPS、无尾斜杠到尾斜杠，都属于预期重定向；GSC 会把被重定向的 URL 列为“网页会自动重定向”，这不是错误。
 - 线上 `https://taskbarheroatlas.com/favicon.ico` 返回 404；已新增根目录 `favicon.ico` 兜底，避免浏览器和 Google 默认探测 favicon 时产生无意义 404。
 - 后续仍需用户在 GSC 的每个原因里看“示例网址”：如果示例是 `www`、`/privacy/`、`/404.html`、`/favicon.ico` 或旧错误 URL，通常无需紧急处理；如果示例是 sitemap 中的主内容页，再逐条诊断。
+
+## 2026-07-28：博客评论外链 CSV 初筛
+
+- 用户提供 `/Users/zhaobingkun/Documents/外链-博客.csv`，共 308 条 URL、308 个不同域名，只有一列 `url`；约 260 条是 `/post/` 页面。
+- 样例和粗分类显示绝大多数是教育、机构、金融、宗教、生活方式、企业博客等杂项页面，和 Task Bar Hero / 游戏工具主题不相关；关键词粗筛只有约 5 条可能和 gaming 有弱相关。
+- 结论：不应自动批量发布博客评论外链。该做法容易被视为评论垃圾、低相关外链或链接操纵；最多只能把少量高度相关页面作为人工、透明、实质性评论候选。
+- 可合规继续做：从列表中筛出 gaming/工具/社区相关页面，逐个检查是否允许评论、是否相关、是否 nofollow/ugc，再准备少量非模板化评论草稿；优先推广 Chest Timer 或 Rune guide，而不是首页硬广。
+
+## 2026-07-28：AI 外链 CSV 初筛
+
+- 用户提供 `/Users/zhaobingkun/Documents/外链ai .csv`，共 8309 行、8239 个唯一 URL、8146 个唯一 host，只有一列 `url`。
+- 该列表主要是 AI 工具官网/落地页清单，不是评论页或投稿页清单：8039 个 URL 带联盟或追踪参数，7383 个带 `utm_source`，7799 个 URL 含 `toolify`，7800 个是首页路径加查询参数。
+- 顶级域以 `.com`、`.ai`、`.io`、`.app` 为主；样例包含 Genspark、Jasper、Writesonic、SurferSEO、Rytr 等 AI/SEO 工具官网或联盟跳转。
+- 结论：这份 CSV 不适合作为 Task Bar Hero 外链执行清单，也不能自动发布外链；它更适合做 AI 工具站的竞品/目录数据源、替代品页面选题或商业词研究。
+- 如后续要做 AI 站外链，应另找可明确提交的目录页、产品发布页或社区规则允许的相关讨论页，并人工透明提交；不要用该表批量请求/评论/注册。
+
+## 2026-07-28：AI 工具站选题初筛
+
+- 已基于 `/Users/zhaobingkun/Documents/外链ai .csv` 生成本地报告 `AI-TOOLS-OPPORTUNITY-REPORT.md`，将 8239 个唯一 URL 粗分为 Image/Design、Chatbot/Agent、Marketing/Sales、SEO/Content、Video/Audio、Coding/Developer、Education、Data/Research 等方向。
+- 不建议做泛 `AI tools directory`：Futurepedia、Toolify 等目录站已经成熟，CSV 本身也显示大量 Toolify 来源和联盟追踪链接，新站直接做工具大全容易变成低差异化目录。
+- 最推荐方向：`AI Coding Tools Benchmark / AI Developer Tools Guide`。原因不是数量最大，而是可通过真实 repo、真实 bug、同一 prompt、同一评分表做可重复 benchmark，形成原创经验与证据。
+- 第二梯队方向：AI Video/Audio tools for creators、AI SEO/Content tools for small sites、AI Study/Teacher tools、AI Product Photo/Ecommerce tools。每个方向都必须窄化到具体使用场景，不做泛目录。
+- 下一步如继续：先二次抓取/人工核验 coding 工具的 title、description、pricing、affiliate 状态，再规划 20-30 页静态 MVP，包括 tools、benchmarks、comparisons、use-cases 四类页面。
+
+## 2026-07-28：AI 导航站可行性判断
+
+- 可以用 `/Users/zhaobingkun/Documents/外链ai .csv` 做 AI 导航站的数据种子，但不能把 8239 个 URL 直接批量生成 8239 个可索引详情页；这会变成低原创、低验证的工具目录，收录和质量风险都高。
+- 首版应先清洗 URL：按 host 去重，去掉 `utm_source`、`via`、`fpr`、`ref`、`aff` 等追踪/联盟参数，使用官方干净 URL 作为出站链接。
+- 推荐发布策略：300-800 个精选工具列表、100-300 个已补齐信息的详情页、10-14 个分类 Hub、20-40 个集合/对比页；信息不足的工具先留在后台数据表，不建索引页。
+- 导航站要有差异化：人工精选、明确分类、价格/免费层/登录要求/更新时间、方法论页、Submit Tool 页、实测或使用场景；后续用 benchmark 和 comparison 页面获取真正 SEO 增量。
+- 已把 AI 导航站方案补入 `AI-TOOLS-OPPORTUNITY-REPORT.md`。
+
+## 2026-07-30：GSC 过去 24 小时表现复查
+
+- 用户提供 GSC 导出目录 `/Users/zhaobingkun/Downloads/taskbarheroatlas.com-Performance-on-Search-2026-07-30/`，过滤器显示为网页搜索、过去 24 小时。
+- 站点不是完全无曝光：国家/设备维度合计为 2 次点击、175 次展示；页面维度为 2 次点击、181 次展示；查询维度为 2 次点击、76 次展示。查询维度较小应视为 GSC 低量数据隐藏/聚合差异，不能强行相加。
+- 唯一有点击的页面是 `/builds/`，对应查询 `task bar hero build` 与 `task bar hero builds`；build 意图应列为最高优先级加厚方向。
+- 最强未点击机会是 `tbh rune tree`：6 展示、平均排名 5.83；应加厚 `/rune-tree/`，自然覆盖 `TBH Rune Tree`、`rune map`、`full rune tree`、`all runes`，并明确 `/runes/` 与 `/rune-tree/` 的意图分工。
+- `/drop-rates/` 有 16 展示、平均排名 14.12，且 `task bar hero drop rates` 查询平均排名 7.5；应补 Chest drops、gear drops、stage drops、样本记录模板和官方/未验证边界。
+- `/codes/` 有 11 展示、平均排名 8.91，`task bar hero code/codes` 排名 4-7；需要保持官方核验日期和直接答案，绝不能编造兑换码。
+- `/calculators/`、`/stages/`、`/updates/` 已有早期曝光，应作为 P1 加厚方向；`www` 页面仍在 GSC 出现，但线上复查 `www` 已 308 到裸域，裸域页面 200，sitemap 只列裸域，当前不是主阻塞。
+- 已生成本地报告 `GSC-PERFORMANCE-2026-07-30.md`。执行顺序建议：`/builds/` → `/rune-tree/` + `/runes/` → `/drop-rates/` → `/codes/` → `/calculators/` → `/stages/`。
+
+## 2026-07-30：GSC 过去 28 天表现复查
+
+- 用户随后提供 28 天 GSC 导出目录 `/Users/zhaobingkun/Downloads/taskbarheroatlas.com-Performance-on-Search-2026-07-30 (1)/`，过滤器为网页搜索、过去 28 天；图表实际从 2026-07-19 开始有有效展示。
+- 页面维度：24 点击、865 展示、CTR 2.77%、加权平均排名约 17.82；国家/设备维度：24 点击、791 展示、CTR 3.03%；查询维度：12 点击、324 展示、CTR 3.70%，低于页面维度属于 GSC 隐藏查询/聚合差异。
+- 日期趋势从 7 月 19 日 7 展示增至 7 月 27 日 158 展示，说明 Google 正在扩大查询和页面覆盖；平均排名变低主要是更多低位长尾加入，不代表站点失败。
+- 页面优先级从 24 小时报告调整为：`/drop-rates/` 第一（5 点击、113 展示）、`/builds/` 第二（5 点击、33 展示、CTR 15.15%）、`/codes/` 第三（4 点击、79 展示、平均排名 5.85）、`/runes/` + `/rune-tree/` 第四（`/runes/` 129 展示但 0 点击，是最大 CTR 漏斗）。
+- 高价值查询：`tbh rune tree` 9 展示、排名 7.22 但 0 点击；`tbh drop rate` 9 展示、排名 10；`task bar hero build` 7 展示、2 点击、排名 5.43；`taskbar hero redeem code` 5 展示、排名 4；`task bar hero chest cooldown` 4 展示、排名 8.5。
+- 国家信号：巴西 8 点击/57 展示，越南 3 点击/120 展示，印尼 2 点击/84 展示，阿根廷 2 点击/12 展示；多语言有潜在方向，但当前仍不建议立即上线，应先加厚英文页，后续若持续验证再考虑葡语、越南语、印尼语、土耳其语或西语。
+- `www` URL 在 28 天页面报告中仍有 9 个，但当前线上已复查为 `www` 308 到裸域、裸域 200、sitemap 只列裸域；不要把它列为 P0 技术问题。
+- 已生成本地报告 `GSC-PERFORMANCE-2026-07-30-28D.md`。下一步建议：加厚 `/drop-rates/` → `/builds/` → `/codes/` → `/runes/` + `/rune-tree/` → `/calculators/chest-timer/` → `/guides/stage-progression/` + `/stages/`，并同步 sitemap lastmod。
+
+## 2026-07-30：按 GSC 28 天信号加厚 P0 页面
+
+- 用户确认暂不做多语言，并要求按 GSC 28 天建议更新。已本地更新 6 个英文页面，未推送上线：`/drop-rates/`、`/builds/`、`/codes/`、`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`。
+- `/drop-rates/` 改为首屏直接回答当前无官方通用掉率表，新增 chest drops、gear drops、stage drops、sample log、sample size、drop source vs drop rate 等内容，承接 `tbh drop rate`、`taskbar hero drop rate`、`chest drop rate`、`chest cooldown` 查询，同时继续不编造百分比。
+- `/builds/` 改为 farming / boss / survival / beginner build 框架，覆盖 `task bar hero build`、`tbh build`、`best build`、class-specific build 等意图；继续要求 patch、activity、assumptions 和 repeatable result，不发布未验证“最强 build”。
+- `/codes/` 加强 `codes`、`redeem code`、`gift code`、`TBH codes` 语义，首屏明确截至 2026-07-30 未找到 verified active codes、redeem method 或 gift codes；保留官方来源检查和反 code generator 安全提示。
+- `/runes/` 重新定位为 Rune Guide Hub，承接 Task Bar Hero runes、best runes、clear-speed、boss-damage、survival 等意图；`/rune-tree/` 重新定位为 TBH Rune Tree / full rune tree / rune map / rune planner 页面，避免两个页面争同一意图。
+- `/calculators/chest-timer/` 加强 chest cooldown vs personal timer 的区别，明确 30/60 min 是个人提醒预设，不是官方冷却数据。
+- `sitemap.xml` 已把上述 6 个 URL 的 `<lastmod>` 更新为 `2026-07-30`。静态验证：6 个改动页面 title、description、canonical、单一 H1、JSON-LD、站内链接目标均通过；全站 32 个 HTML 基础 SEO 检查通过，0 个失败。

@@ -1,5 +1,62 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task Bar Hero Chest Timer | TBH Atlas</title><meta name="description" content="A simple local Task Bar Hero chest timer. Set 30 or 60 minutes and keep your next chest window visible in this browser tab."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://taskbarheroatlas.com/calculators/chest-timer/"><link rel="icon" href="/assets/favicon.png" type="image/png"><meta property="og:type" content="website"><meta property="og:title" content="Task Bar Hero Chest Timer | TBH Atlas"><meta property="og:description" content="A simple local timer for your next chest window."><meta property="og:url" content="https://taskbarheroatlas.com/calculators/chest-timer/"><meta property="og:image" content="https://taskbarheroatlas.com/assets/atlas-loot-cache.webp"><link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" /></noscript>
-    <link rel="stylesheet" href="/styles.css" /><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Task Bar Hero Chest Timer","url":"https://taskbarheroatlas.com/calculators/chest-timer/","applicationCategory":"UtilityApplication","operatingSystem":"Any","isAccessibleForFree":true}</script></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="/" aria-label="Task Bar Hero Atlas home"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></a><nav aria-label="Primary navigation"><a href="/calculators/chest-timer/">Tools</a><a href="/tier-list/">Builds</a><a href="/runes/">Database</a><a href="/guides/exp-farm/">Guides</a></nav><a class="patch-chip" href="/#updates"><span></span>Tracking v1.01.02</a></header><main class="page-shell" id="main"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><a href="/privacy/">Privacy</a><span>›</span><span>Chest Timer</span></nav><header class="page-hero"><p class="eyebrow">UTILITY / LOCAL TIMER</p><h1>Task Bar Hero Chest Timer</h1><p class="page-lede">Set a simple in-tab countdown for the next chest window. It is a personal reminder—not a claim about a universal or official chest cooldown.</p></header><article class="content-layout"><div class="content-main"><div class="answer-box"><strong>HOW IT WORKS</strong><p>Choose a time, press Start, and keep this tab open. The timer runs locally in your browser and does not send notifications or collect your account data.</p></div><section class="tool-wide" aria-label="Chest timer"><p class="eyebrow">YOUR TIMER</p><div class="timer-display" aria-live="polite"><span id="timer-value">00:30:00</span><small id="timer-status">ready when you are</small></div><div class="timer-controls"><button class="text-button" type="button" data-timer="1800">30 min</button><button class="text-button" type="button" data-timer="3600">60 min</button><button class="text-button text-button-strong" type="button" id="timer-toggle">Start</button></div></section><h2>Use a timer without guessing the game data</h2><p>Different chest types, events, versions, and personal routines may not share one schedule. The safest use is to enter the interval you want to track for your own session instead of treating this page as a source of official cooldown values.</p><h2>What this first tool does and does not do</h2><div class="mini-grid"><div class="mini-card"><strong>It does</strong><span>Run a visible local countdown in the active tab.</span></div><div class="mini-card"><strong>It does not</strong><span>Claim verified chest schedules or push notifications.</span></div></div><h2>Chest Timer FAQ</h2><div class="faq-list"><details><summary>Does the timer keep running after I close the tab?</summary><p>No. The first release is intentionally a lightweight in-tab timer. Persistent reminders can be added later only when the behavior is clearly explained.</p></details><details><summary>Why are there 30 and 60 minute buttons?</summary><p>They are fast personal presets, not verified statements about any specific in-game chest cooldown.</p></details></div></div><aside class="side-note"><p>USEFUL NEXT</p><a href="/drop-rates/">Check drop sources →</a><a href="/guides/exp-farm/">Plan an EXP farm →</a><a href="/runes/">Review Rune choices →</a></aside></article><section class="related-pages"><h2>More useful desk pages</h2><div class="related-grid"><a href="/drop-rates/"><strong>Drop Rates</strong><span>Keep confirmed and unknown data separate.</span></a><a href="/guides/exp-farm/"><strong>EXP Farming</strong><span>Track time where it matters.</span></a><a href="/rune-tree/"><strong>Rune Tree</strong><span>Route the next point with a goal.</span></a></div></section></main><footer class="site-footer"><div class="brand"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></div><p>Independent Task Bar Hero tools & guides. Not affiliated with the developer.</p><div><a href="/">Home</a><a href="/#about">About</a></div></footer><script src="/app.js" defer></script><script src="/site-config.js" defer></script><script src="/analytics.js" defer></script><script src="/sidebar.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Task Bar Hero Chest Timer & Chest Cooldown Tracker | TBH Atlas</title>
+  <meta name="description" content="Task Bar Hero chest timer for v1.01.02: track your own chest cooldown window locally, with clear notes on what is and is not official data.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://taskbarheroatlas.com/calculators/chest-timer/">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Task Bar Hero Chest Timer & Chest Cooldown Tracker | TBH Atlas">
+  <meta property="og:description" content="Use a local Task Bar Hero chest timer without treating presets as official cooldown data.">
+  <meta property="og:url" content="https://taskbarheroatlas.com/calculators/chest-timer/">
+  <meta property="og:image" content="https://taskbarheroatlas.com/assets/atlas-loot-cache.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Task Bar Hero Chest Timer and Chest Cooldown Tracker","url":"https://taskbarheroatlas.com/calculators/chest-timer/","applicationCategory":"UtilityApplication","operatingSystem":"Any","isAccessibleForFree":true,"dateModified":"2026-07-30"}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Task Bar Hero Atlas home"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></a>
+    <nav aria-label="Primary navigation"><a href="/calculators/chest-timer/">Tools</a><a href="/tier-list/">Builds</a><a href="/runes/">Database</a><a href="/guides/exp-farm/">Guides</a></nav>
+    <a class="patch-chip" href="/updates/"><span></span>Tracking v1.01.02</a>
+  </header>
+  <main class="page-shell" id="main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><a href="/privacy/">Privacy</a><span>›</span><span>Chest Timer</span></nav>
+    <header class="page-hero">
+      <p class="eyebrow">UTILITY / LOCAL CHEST COOLDOWN TRACKER</p>
+      <h1>Task Bar Hero Chest Timer</h1>
+      <p class="page-lede">Set a local countdown for the next chest window you want to track. This tool helps your session routine; it does not claim a universal official chest cooldown.</p>
+    </header>
+    <article class="content-layout">
+      <div class="content-main">
+        <div class="answer-box"><strong>HOW IT WORKS</strong><p>Choose a preset, press Start, and keep this tab open. The timer runs locally in your browser and does not collect account data, send notifications, or verify in-game chest schedules.</p></div>
+        <section class="tool-wide" aria-label="Chest timer"><p class="eyebrow">YOUR TIMER</p><div class="timer-display" aria-live="polite"><span id="timer-value">00:30:00</span><small id="timer-status">ready when you are</small></div><div class="timer-controls"><button class="text-button" type="button" data-timer="1800">30 min</button><button class="text-button" type="button" data-timer="3600">60 min</button><button class="text-button text-button-strong" type="button" id="timer-toggle">Start</button></div></section>
+        <h2>Chest cooldown vs personal timer</h2>
+        <p>Searches for <em>Task Bar Hero chest cooldown</em>, <em>TBH chest timer</em> and <em>chest tracker</em> often mix two different needs. A cooldown is a game-data claim. A timer is a reminder you set for your own routine. Atlas only provides the reminder unless a current official source confirms a schedule.</p>
+        <h2>When to use this tracker</h2>
+        <div class="mini-grid"><div class="mini-card"><strong>Repeat sessions</strong><span>Keep a visible reminder while testing a farming loop.</span></div><div class="mini-card"><strong>Chest observations</strong><span>Pair the timer with a source and attempt log.</span></div><div class="mini-card"><strong>Drop notes</strong><span>Use it beside drop-rate records, not as proof of a rate.</span></div><div class="mini-card"><strong>Patch checks</strong><span>Re-check assumptions after updates.</span></div></div>
+        <h2>What this tool does not claim</h2>
+        <ul><li>It does not confirm 30 or 60 minutes as official chest cooldowns.</li><li>It does not keep running after you close the tab.</li><li>It does not inspect your Steam account or game state.</li><li>It does not replace a drop-rate sample log.</li></ul>
+        <h2>Chest Timer FAQ</h2>
+        <div class="faq-list">
+          <details><summary>Is this an official Task Bar Hero chest cooldown?</summary><p>No. It is a local timer. The preset buttons are convenient reminder intervals, not verified game data.</p></details>
+          <details><summary>Does the timer keep running after I close the tab?</summary><p>No. This first release is intentionally a lightweight in-tab timer.</p></details>
+          <details><summary>How should I track chest drops?</summary><p>Use the drop-rate page and chest drop notes to record source, attempts, rewards, patch and observation status.</p></details>
+        </div>
+      </div>
+      <aside class="side-note"><p>USEFUL NEXT</p><a href="/drop-rates/">Drop-rate desk →</a><a href="/drops/chests/">Chest drop notes →</a><a href="/guides/exp-farm/">EXP farming →</a><a href="/runes/">Rune guide →</a><p>Patch tracked: v1.01.02<br>Checked: Jul 30, 2026</p></aside>
+    </article>
+    <section class="related-pages"><h2>More useful desk pages</h2><div class="related-grid"><a href="/drop-rates/"><strong>Drop Rates</strong><span>Keep confirmed and unknown data separate.</span></a><a href="/drops/chests/"><strong>Chest Drops</strong><span>Record source and reward context.</span></a><a href="/guides/exp-farm/"><strong>EXP Farming</strong><span>Track time where it matters.</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="brand"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></div><p>Independent Task Bar Hero tools & guides. Not affiliated with the developer.</p><div><a href="/">Home</a><a href="/privacy/">Privacy</a></div></footer>
+  <script src="/app.js" defer></script><script src="/site-config.js" defer></script><script src="/analytics.js" defer></script><script src="/sidebar.js" defer></script>
+</body>
+</html>
