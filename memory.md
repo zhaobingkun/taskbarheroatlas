@@ -410,4 +410,4 @@
 - `/updates/` 已分开说明 7 月 31 日 `v1.01.04` 与 7 月 30 日恢复热修复，移除未在当前官方新闻流中确认的 `v1.01.03` 和 `Memorial Coin` 表述，不从稳定性修复推导 Rune、掉率、EXP 路线或永久 build 排名。
 - 修复既有重复 title：`/guides/gear-guide/` 改为 `Task Bar Hero Gear Upgrade Guide | TBH Atlas`，与 `/gear/` 的数据库型 Gear Guide 区分。
 - 静态验证通过：32 个 HTML 文件均有唯一 title、唯一 meta description、canonical、单一 H1；JSON-LD 可解析；站内链接目标存在；`sitemap.xml` 30 个 URL 可解析；`git diff --check` 和版本/日期残留检查通过。
-- 已创建提交 `1403e0e Sync site with Task Bar Hero v1.01.04` 并成功推送到 GitHub `origin/main`；本次推送用于触发托管平台自动部署，线上 HTTP 状态仍需单独复查。
+- 已创建提交 `1403e0e Sync site with Task Bar Hero v1.01.04`、`994b4ca Record v1.01.04 deployment push` 并成功推送到 GitHub `origin/main`；线上 `/updates/` 返回 HTTP 200，源码含 `v1.01.04`，线上 `sitemap.xml` 含 `2026-08-02`。
