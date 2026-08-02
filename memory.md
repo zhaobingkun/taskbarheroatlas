@@ -411,3 +411,11 @@
 - 修复既有重复 title：`/guides/gear-guide/` 改为 `Task Bar Hero Gear Upgrade Guide | TBH Atlas`，与 `/gear/` 的数据库型 Gear Guide 区分。
 - 静态验证通过：32 个 HTML 文件均有唯一 title、唯一 meta description、canonical、单一 H1；JSON-LD 可解析；站内链接目标存在；`sitemap.xml` 30 个 URL 可解析；`git diff --check` 和版本/日期残留检查通过。
 - 已创建提交 `1403e0e Sync site with Task Bar Hero v1.01.04`、`994b4ca Record v1.01.04 deployment push` 并成功推送到 GitHub `origin/main`；线上 `/updates/` 返回 HTTP 200，源码含 `v1.01.04`，线上 `sitemap.xml` 含 `2026-08-02`。
+
+## 2026-08-02：每日官方更新自动化
+
+- 已在 Codex App 创建并启用项目级自动化 `task-bar-hero-daily-official-update`，按 Asia/Shanghai 本地时间每天 09:00 运行。
+- 自动化先读取 `agents.md` / `memory.md` 并检查工作区；发现未提交改动时跳过，避免覆盖手工工作。
+- 有新的官方 Steam 公告时，自动核对事实、更新 `/updates/`，必要时创建独立 SEO 页面，更新 sitemap 和受影响页面，然后运行静态 SEO/链接验证，通过后执行 commit 与 `git push origin main`。
+- 没有新公告时不修改、不提交、不推送；验证失败或推送失败时保留现场并报告，不 force push、不 reset、不删除用户文件。
+- “自动发布”依赖现有 GitHub `main` 到托管平台的自动部署链路；自动化本身负责生成页面、提交和 push。
