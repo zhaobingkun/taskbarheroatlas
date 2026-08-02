@@ -28,7 +28,7 @@ Copy the text below into Steam's guide editor. Replace the checked date only aft
 
 ## TBH Beginner Route: Find Your First Wall Before Chasing a Build
 
-**Checked against the official v1.01.02 hotfix on July 27, 2026.**
+**Checked against the official v1.01.04 hotfix on August 2, 2026.**
 
 There is no useful permanent “best build” if it does not solve the problem stopping your current run. This guide is a first-hours decision route: find the wall, make one focused change, then test it in the same activity.
 
@@ -98,7 +98,7 @@ Use this format in a note, spreadsheet, or Steam comment:
 
 Example:
 
-`v1.01.02 | [activity] | [stage] | repeated clears slow | [one change] | [result] | keep/revert`
+`v1.01.04 | [activity] | [stage] | repeated clears slow | [one change] | [result] | keep/revert`
 
 The result does not need to be a perfect damage calculation. A clear observation such as “more completed runs in the same time” or “still dies before the target” is enough to decide the next test.
 

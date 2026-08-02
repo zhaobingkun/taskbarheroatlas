@@ -401,3 +401,13 @@
 - 线上复查：`https://taskbarheroatlas.com/drop-rates/` 与 `https://taskbarheroatlas.com/builds/` 均返回 HTTP 200，`Last-Modified: Thu, 30 Jul 2026 04:31:55 GMT`，页面源码已显示新 title 和 2026-07-30 更新内容。
 - 线上 `https://taskbarheroatlas.com/sitemap.xml` 返回 HTTP 200，复查内容已包含 6 个改动 URL 的 `<lastmod>2026-07-30</lastmod>`：`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`、`/drop-rates/`、`/builds/`、`/codes/`。
 - 发布后建议在 GSC 重新提交 sitemap，并优先请求抓取 `/drop-rates/`、`/builds/`、`/codes/`、`/runes/`、`/rune-tree/`、`/calculators/chest-timer/`。
+
+## 2026-08-02：v1.01.04 全站同步与官方范围校正
+
+- 已直接复查官方 Steam Community 全部新闻页；截至 2026-08-02，最新可见版本公告为 7 月 31 日发布的 `Hotfix Update - ver 1.01.04`。
+- `v1.01.04` 公告本身只有两项修复：特定情况下服务器物品验证结果窗口无法关闭，以及部分物品无法移动、合成等操作。7 月 30 日的物品恢复/热修复公告包含邮箱、宝箱、恢复显示、Slayer 技能等更广范围内容，两次公告不能混写。
+- 已把全站当前版本标签、核心页面检查日期、相关 JSON-LD `dateModified`、Steam Guide 草稿和 `sitemap.xml` 同步到 `v1.01.04` / `2026-08-02`；历史 `v1.01.00` 交易更新仍保留为历史语境。
+- `/updates/` 已分开说明 7 月 31 日 `v1.01.04` 与 7 月 30 日恢复热修复，移除未在当前官方新闻流中确认的 `v1.01.03` 和 `Memorial Coin` 表述，不从稳定性修复推导 Rune、掉率、EXP 路线或永久 build 排名。
+- 修复既有重复 title：`/guides/gear-guide/` 改为 `Task Bar Hero Gear Upgrade Guide | TBH Atlas`，与 `/gear/` 的数据库型 Gear Guide 区分。
+- 静态验证通过：32 个 HTML 文件均有唯一 title、唯一 meta description、canonical、单一 H1；JSON-LD 可解析；站内链接目标存在；`sitemap.xml` 30 个 URL 可解析；`git diff --check` 和版本/日期残留检查通过。
+- 本轮仅完成本地改动和验证，尚未提交、推送或发布。
