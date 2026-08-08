@@ -419,3 +419,10 @@
 - 有新的官方 Steam 公告时，自动核对事实、更新 `/updates/`，必要时创建独立 SEO 页面，更新 sitemap 和受影响页面，然后运行静态 SEO/链接验证，通过后执行 commit 与 `git push origin main`。
 - 没有新公告时不修改、不提交、不推送；验证失败或推送失败时保留现场并报告，不 force push、不 reset、不删除用户文件。
 - “自动发布”依赖现有 GitHub `main` 到托管平台的自动部署链路；自动化本身负责生成页面、提交和 push。
+
+## 2026-08-08：官方补偿邮件最终重发公告
+
+- 官方 Steam Community 全部新闻页最新可见公告为 `Server Outage Compensation Mail: Second (Final) Resend Completed`，页面显示 Aug 6；公告确认针对符合条件且未正确收到补偿邮件的玩家，第二次也是最终一次重发已完成，审核依据为 Aug 1 前提交的相关报告，并明确不再提供额外重发或单独补偿发放。
+- 该公告是服务/补偿状态通知，不是版本更新；当前官方版本仍为 `v1.01.04`。本次不从公告推导 Rune 数值、掉率、Build、EXP 路线、排名或新奖励数值，也不改动受影响页面的当前版本标签。
+- 已更新 `/updates/` 的官方状态表、补偿公告解释、FAQ、检查日期、JSON-LD `dateModified` 和官方新闻链接；同步更新首页 patch desk 摘要，并将首页与 `/updates/` 的 sitemap `lastmod` 更新为 `2026-08-08`。没有新建独立 SEO 页面：该服务通知适合归档在已有公告 Hub，单独页面会造成薄内容和重复意图。
+- 静态验证通过：32 个 HTML 文件均有 title、meta description、canonical、单一 H1；JSON-LD 可解析；站内链接目标存在；`sitemap.xml` 可解析；`git diff --check` 通过。
