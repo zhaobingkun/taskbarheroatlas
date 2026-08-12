@@ -426,3 +426,12 @@
 - 该公告是服务/补偿状态通知，不是版本更新；当前官方版本仍为 `v1.01.04`。本次不从公告推导 Rune 数值、掉率、Build、EXP 路线、排名或新奖励数值，也不改动受影响页面的当前版本标签。
 - 已更新 `/updates/` 的官方状态表、补偿公告解释、FAQ、检查日期、JSON-LD `dateModified` 和官方新闻链接；同步更新首页 patch desk 摘要，并将首页与 `/updates/` 的 sitemap `lastmod` 更新为 `2026-08-08`。没有新建独立 SEO 页面：该服务通知适合归档在已有公告 Hub，单独页面会造成薄内容和重复意图。
 - 静态验证通过：32 个 HTML 文件均有 title、meta description、canonical、单一 H1；JSON-LD 可解析；站内链接目标存在；`sitemap.xml` 可解析；`git diff --check` 通过。
+
+## 2026-08-12：v1.01.05 官方更新同步
+
+- 官方 Steam Community 全部新闻页最新可见公告为 `[1.01.05] Bug Fixes`，页面显示 Aug 11；公告明确游戏已更新到 `v1.01.05`。
+- 公告事实包括：Hunter Frost Bolt 偶发冻结全部怪物、Finger of Death 动画显示、特定账号邮箱领取错发宝箱、开宝箱崩溃、每 24 小时备份存档且最多保留 30 天、宝箱自动开启计时器、Cube 配方记忆、Multistrike 错误应用，以及死亡英雄 Resistance 惩罚显示等问题修复。
+- 本次将全站当前版本标签、页面检查日期、相关 JSON-LD `dateModified` 和 `sitemap.xml` 同步到 `v1.01.05` / `2026-08-12`；`v1.01.04` 与 Aug 6 最终补偿重发仍保留为历史语境。
+- `/updates/` 改为直接承接 `Task Bar Hero v1.01.05 patch notes`，加入官方事实、玩家影响、事实边界、更新后检查建议、FAQ 和官方 Steam 新闻源；没有创建独立新页，因为现有 Updates Hub 已有明确版本搜索价值。
+- 不从 bug fix 或存档备份推导 Rune 数值、掉率、Build 强弱、EXP 路线、排名、奖励数值或恢复保证。
+- 待运行验证：全站 HTML title/meta/canonical/单一 H1/JSON-LD、站内链接、sitemap XML、`git diff --check`；验证通过后再提交并推送。
