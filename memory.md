@@ -461,3 +461,12 @@
 - `Vietnam`（26 点击/443 展示）和 `Brazil`（18/218）是主要国家信号，但查询表仅有 2 次非 ASCII 查询展示且 0 点击；这说明目前更像英语搜索用户分布，不能直接据此上线越南语或葡萄牙语。
 - 设备上桌面贡献 3508 展示、91 点击，移动端平均排名和 CTR 反而更好；当前重点应是桌面 SERP 标题/摘要和内容意图，不是优先重做移动端。
 - GSC 页面表仍包含少量 `www` 重定向变体；决策时以裸域 HTTPS canonical 页面为准。当前只完成分析，没有修改页面代码；建议下一轮按 `/rune-tree/` → `/runes/` → `/drop-rates/` → 首页/Stages 的顺序优化。
+
+## 2026-08-16：按 GSC 优先级完成 CTR 优化
+
+- 按展示量与平均排名优先优化 `/rune-tree/`、`/runes/`、`/drop-rates/` 和首页，没有做全站重构，也没有上线多语言目录。
+- `/rune-tree/` 的 title、description、首屏答案和 FAQ 改为直接承接 `tbh rune tree`、`full rune tree`、`rune map`、`rune planner`；明确当前没有官方完整节点数值表，并新增 map status、route planner、test record 的可抓取说明。
+- `/runes/` 改为更明确的 `Task Bar Hero Runes Guide`，首屏先回答按 clear speed、boss damage、survival 选择 rune job，再进入 Rune Tree route；保留已确认/观察/未验证边界。
+- `/drop-rates/` 改为更明确的 `Drop Rates Guide`，首屏先回答官方掉率表是否存在，继续区分 chest、gear、stage source 与未验证百分比，不编造掉率数据。
+- 首页 title、description、OG/Twitter title 和首屏 H1/简介收紧到 `Task Bar Hero Wiki`、`Builds`、`Tools`、`Rune Tree routes` 等主要查询意图；四个改动 URL 的 sitemap `lastmod` 同步为 `2026-08-16`。
+- 验证通过：`git diff --check`；32 个 HTML 页面 title、description、canonical、单一 H1、JSON-LD 与站内链接；30 个 sitemap URL 可解析且目标 URL 存在。下一步提交并推送后，再观察 GSC CTR 与非品牌查询变化。
