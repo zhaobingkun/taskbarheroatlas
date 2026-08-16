@@ -443,3 +443,10 @@
 - 后续应先用最新 28 天 GSC 确认某一语言/国家是否持续贡献展示、点击和非英语查询，再一次只增加一种语言；优先验证 `/pt-br/`，其次根据新数据考虑 `/vi/` 或 `/id/`，不预先铺十几种机器翻译语言。
 - 多语言启动门槛采用项目内部判断：英文核心页稳定、至少一个语言市场连续出现真实查询/点击、并能持续维护本地化正文；这不是 Google 官方排名阈值。
 - 开始翻译时使用独立子目录、双向 hreflang、自引用 canonical、本语言 sitemap 和本地化 FAQ；只有真实翻译页面存在后才发布 hreflang，不创建空语言目录。
+
+## 2026-08-16：GSC 重定向提示复查
+
+- GSC 列出的 `www` 页面、`http://` 首页和裸域变体属于被发现的非规范 URL；线上检查确认 `https://www.taskbarheroatlas.com/<path>/` 返回 308 到 `https://taskbarheroatlas.com/<path>/`，最终页面返回 200。
+- `http://taskbarheroatlas.com/` 一跳到 HTTPS 裸域；`http://www.taskbarheroatlas.com/` 当前两跳到 HTTPS 裸域。最终正文 self-canonical 到裸域，robots 允许索引，sitemap 只列裸域 HTTPS URL。
+- 这批 `Page with redirect` 不需要逐个修复或加入 sitemap；GSC 应保留它们作为重定向变体，重点观察裸域 HTTPS canonical URL 是否 200、是否被收录。
+- 可选优化是把 `http://www` 直接合并为一跳到 `https://taskbarheroatlas.com/`，但这是性能/规范化细节，不是当前 P0 索引故障。
