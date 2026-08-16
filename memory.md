@@ -450,3 +450,14 @@
 - `http://taskbarheroatlas.com/` 一跳到 HTTPS 裸域；`http://www.taskbarheroatlas.com/` 当前两跳到 HTTPS 裸域。最终正文 self-canonical 到裸域，robots 允许索引，sitemap 只列裸域 HTTPS URL。
 - 这批 `Page with redirect` 不需要逐个修复或加入 sitemap；GSC 应保留它们作为重定向变体，重点观察裸域 HTTPS canonical URL 是否 200、是否被收录。
 - 可选优化是把 `http://www` 直接合并为一跳到 `https://taskbarheroatlas.com/`，但这是性能/规范化细节，不是当前 P0 索引故障。
+
+## 2026-08-16：GSC 过去 28 天表现复查
+
+- 用户提供 `/Users/zhaobingkun/Downloads/taskbarheroatlas.com-Performance-on-Search-2026-08-16/` 导出；过滤器为网页搜索、过去 28 天。图表数据实际覆盖 2026-07-18 至 2026-08-13，存在 GSC 各维度聚合/隐私阈值差异，不能把页面、查询、国家和设备总量相加。
+- 页面维度为 102 点击、4030 展示、CTR 2.53%；相比 7 月 30 日记录的 24 点击、865 展示，收录与搜索覆盖明显增长，暂不适合做全站大改。
+- `/codes/` 是当前最强页面：55 点击、422 展示、CTR 13.03%、平均排名 5.82；应保持直接答案和官方核验，不做大幅改写。
+- 最大 CTR 漏斗是 `/rune-tree/`：513 展示、2 点击、CTR 0.39%、平均排名 10.47；查询 `tbh rune tree` 有 206 展示、平均排名 4.83 但 0 点击，优先优化标题、description、首屏答案、Rune Map/Planner 解释和 FAQ，而不是先扩语言。
+- 第二优先是 `/runes/`：344 展示、0 点击、平均排名 26.03；需要补更明确的 Rune 分类、已确认/未确认边界和到 Rune Tree/三类用途页的内链。`/drop-rates/`（390 展示、6 点击、平均排名 14.27）与首页（366 展示、5 点击、平均排名 22.49）适合随后做 snippet/首屏 CTR 优化。
+- `Vietnam`（26 点击/443 展示）和 `Brazil`（18/218）是主要国家信号，但查询表仅有 2 次非 ASCII 查询展示且 0 点击；这说明目前更像英语搜索用户分布，不能直接据此上线越南语或葡萄牙语。
+- 设备上桌面贡献 3508 展示、91 点击，移动端平均排名和 CTR 反而更好；当前重点应是桌面 SERP 标题/摘要和内容意图，不是优先重做移动端。
+- GSC 页面表仍包含少量 `www` 重定向变体；决策时以裸域 HTTPS canonical 页面为准。当前只完成分析，没有修改页面代码；建议下一轮按 `/rune-tree/` → `/runes/` → `/drop-rates/` → 首页/Stages 的顺序优化。
