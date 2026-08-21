@@ -470,3 +470,11 @@
 - `/drop-rates/` 改为更明确的 `Drop Rates Guide`，首屏先回答官方掉率表是否存在，继续区分 chest、gear、stage source 与未验证百分比，不编造掉率数据。
 - 首页 title、description、OG/Twitter title 和首屏 H1/简介收紧到 `Task Bar Hero Wiki`、`Builds`、`Tools`、`Rune Tree routes` 等主要查询意图；四个改动 URL 的 sitemap `lastmod` 同步为 `2026-08-16`。
 - 验证通过：`git diff --check`；32 个 HTML 页面 title、description、canonical、单一 H1、JSON-LD 与站内链接；30 个 sitemap URL 可解析且目标 URL 存在。下一步提交并推送后，再观察 GSC CTR 与非品牌查询变化。
+
+## 2026-08-21：Plaguelands 官方开发预告同步
+
+- 官方 Steam Community 全部新闻页 `https://steamcommunity.com/app/3678970/allnews/` 出现新公告 `TBH Dev Note #1 - Preparing the Plaguelands Update`，页面显示 Aug 19；这是开发预告，不是新版本发布。公告说明内容仍在开发，预计 early September，最终版本可能变化。
+- 公告确认的范围：Plaguelands 新阶段类型（Nightmare 起可进入，消耗 Corruption，含 Plague Intensity 与 Plagued Act Bosses）、Level 90 装备及约 20 类新 Unique Stats、新 Rune 类型及既有类型追加 Rune、Skin System；未发布精确日期、完整装备/数值、Rune 数值、掉率、排名或最佳路线。
+- 当前 released patch 仍是 `v1.01.05`。更新了 `/updates/`、首页、共享侧栏，以及受影响的 Stages、Runes、Gear 入口；新增独立英文 SEO 页面 `/updates/plaguelands-update/`，包含唯一 title/meta/H1、canonical、Article + FAQ JSON-LD、FAQ、官方来源和相关内链。没有把预告写成已上线内容，也没有从公告推导 Build、掉率、EXP 或排名。
+- `sitemap.xml` 扩展为 31 个目标并同步受影响页面 `lastmod`；共享侧栏由过期的 v1.01.04 修正为 v1.01.05，页面计数更新为 31。
+- 静态验证通过：33 个 HTML 文件（31 个可索引、2 个预期 noindex）均有必需元数据和单一 H1；JSON-LD 可解析；624 个站内链接目标存在；sitemap.xml 31 个目标均存在；`git diff --check` 通过。提交和 push 结果由本次自动化记忆补充。
