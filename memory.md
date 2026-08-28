@@ -478,3 +478,10 @@
 - 当前 released patch 仍是 `v1.01.05`。更新了 `/updates/`、首页、共享侧栏，以及受影响的 Stages、Runes、Gear 入口；新增独立英文 SEO 页面 `/updates/plaguelands-update/`，包含唯一 title/meta/H1、canonical、Article + FAQ JSON-LD、FAQ、官方来源和相关内链。没有把预告写成已上线内容，也没有从公告推导 Build、掉率、EXP 或排名。
 - `sitemap.xml` 扩展为 31 个目标并同步受影响页面 `lastmod`；共享侧栏由过期的 v1.01.04 修正为 v1.01.05，页面计数更新为 31。
 - 静态验证通过：33 个 HTML 文件（31 个可索引、2 个预期 noindex）均有必需元数据和单一 H1；JSON-LD 可解析；624 个站内链接目标存在；sitemap.xml 31 个目标均存在；`git diff --check` 通过。提交和 push 结果由本次自动化记忆补充。
+
+## 2026-08-28：Error 404 启动故障官方服务公告
+
+- 官方 Steam Community 全部新闻页 `https://steamcommunity.com/app/3678970/allnews/` 出现新公告 `Notice Regarding Error 404 When Launching the Game`，页面显示为 Aug 28 00:19 左右；公告确认部分账号启动游戏时出现 Error 404，并要求出现类似 `Error: 404, user not found` 的玩家通过官方 Zendesk `https://nugemstudio.zendesk.com/hc/en-001` 提交支持请求。
+- 该公告是启动故障服务通知，不是版本更新；公告没有说明根因、受影响账号数量、修复时间、补偿、恢复流程或新版本号。因此继续保留 `v1.01.05` 为当前 released patch，不从服务故障推导 Rune 数值、掉率、Build、EXP 路线、排名或解决时限。
+- 已更新首页 patch desk、首页原生侧栏、共享 `sidebar.js`、`/updates/`；更新中心加入 Error 404 事实边界、官方支持入口、FAQ、Aug 28 检查日期和 JSON-LD `dateModified`，并保留 Aug 19 Plaguelands 预告和 v1.01.05 的历史/当前版本分层。没有创建独立 SEO 页面：该服务通知适合归档在已有 Updates Hub，单独页面会形成薄内容。
+- `sitemap.xml` 将首页与 `/updates/` 的 `lastmod` 同步为 `2026-08-28`。静态验证通过：33 个 HTML 文件（31 个可索引、2 个预期 noindex）均有 title、meta description、canonical、单一 H1；JSON-LD 可解析；556 个站内链接目标存在；sitemap.xml 31 个目标均存在；`git diff --check` 通过。
