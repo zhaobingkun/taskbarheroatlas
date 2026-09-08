@@ -485,3 +485,12 @@
 - 该公告是启动故障服务通知，不是版本更新；公告没有说明根因、受影响账号数量、修复时间、补偿、恢复流程或新版本号。因此继续保留 `v1.01.05` 为当前 released patch，不从服务故障推导 Rune 数值、掉率、Build、EXP 路线、排名或解决时限。
 - 已更新首页 patch desk、首页原生侧栏、共享 `sidebar.js`、`/updates/`；更新中心加入 Error 404 事实边界、官方支持入口、FAQ、Aug 28 检查日期和 JSON-LD `dateModified`，并保留 Aug 19 Plaguelands 预告和 v1.01.05 的历史/当前版本分层。没有创建独立 SEO 页面：该服务通知适合归档在已有 Updates Hub，单独页面会形成薄内容。
 - `sitemap.xml` 将首页与 `/updates/` 的 `lastmod` 同步为 `2026-08-28`。静态验证通过：33 个 HTML 文件（31 个可索引、2 个预期 noindex）均有 title、meta description、canonical、单一 H1；JSON-LD 可解析；556 个站内链接目标存在；sitemap.xml 31 个目标均存在；`git diff --check` 通过。
+
+## 2026-09-08：Plague Zone 目标日官方检查
+
+- 读取 `agents.md`、`memory.md` 和自动化记忆后检查工作区；工作区干净，本地 `main` 比 `origin/main` 领先既有提交 `2988c347bc7605469f183f9b1a8be6e21a723493`（`Update Plague Zone schedule coverage`）1 个提交。
+- 复查官方 Steam Community 全部新闻页 `https://steamcommunity.com/app/3678970/allnews/`。最新公告为 `Update Schedule Notice`（Sep 1），精确公告链接为 `https://steamcommunity.com/ogg/3678970/announcements/detail/685263456405816172`。
+- 官方公告确认 Plague Zone 内容更新目标为 2026-09-07 22:00 PDT / 2026-09-08 14:00 KST / 2026-09-08 06:00 BST，并列出新阶段类型、Corrosion Cube 配方、Level 90 装备、约 20 类新 Unique Stats、新 Rune、Skin System 和基础统计菜单。
+- 本次检查时间为 2026-09-08 09:07 CST，换算目标时间为 13:00 CST，目标尚未到达；未验证到新的 released patch，继续保留 `v1.01.05` 为当前版本。没有从公告推导 Rune 数值、掉率、Build、EXP 路线、排名、奖励或最终平衡结论。
+- 更新了 `index.html`、`sidebar.js`、`updates/index.html`、`updates/plaguelands-update/index.html` 和 `sitemap.xml`：同步目标日/检查日、首页与侧栏状态、精确官方链接、JSON-LD `dateModified`/citation，并将实际变更的 3 个 URL 的 sitemap `lastmod` 更新为 `2026-09-08`。
+- 静态验证通过：`git diff --check`；33 个 HTML（31 个可索引、2 个预期 noindex）均通过 title、meta description、canonical、单一 H1 和 JSON-LD 解析；625 个站内链接及引用资源目标存在；`sitemap.xml` 可解析且 31 个目标存在。提交和 push 结果在本次记录完成后补充。
