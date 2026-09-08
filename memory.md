@@ -1,5 +1,11 @@
 # Task Bar Hero 项目经验记录
 
+## 2026-09-08：v1.02.00 推送与生产验证
+
+- 用户明确授权提交后的发布；通过 GitHub SSH 将 `2988c34`、`3e449c1`、`bfc8531` 推送到 `origin/main`，本地与远端最终一致于 `bfc85313f7ed8f3d680c3bc5a32bd73cd537eb24`。
+- Vercel/Cloudflare 自动部署完成。绕过抓取缓存读取生产源码后，首页、`/updates/` 与 `/updates/plaguelands-update/` 均显示 `v1.02.00` 正式发布内容；三页及 `sitemap.xml` 均返回 HTTP 200。
+- 生产 sitemap 的首页、Updates 和 Plaguelands URL 均使用 `2026-09-08` lastmod。搜索抓取缓存一度仍显示旧 v1.01.05，不能用缓存内容否定已验证的生产源代码。
+
 ## 2026-07-19：两站首次在线检查
 
 ### taskbarhero.wiki
