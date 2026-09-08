@@ -494,3 +494,12 @@
 - 本次检查时间为 2026-09-08 09:07 CST，换算目标时间为 13:00 CST，目标尚未到达；未验证到新的 released patch，继续保留 `v1.01.05` 为当前版本。没有从公告推导 Rune 数值、掉率、Build、EXP 路线、排名、奖励或最终平衡结论。
 - 更新了 `index.html`、`sidebar.js`、`updates/index.html`、`updates/plaguelands-update/index.html` 和 `sitemap.xml`：同步目标日/检查日、首页与侧栏状态、精确官方链接、JSON-LD `dateModified`/citation，并将实际变更的 3 个 URL 的 sitemap `lastmod` 更新为 `2026-09-08`。
 - 静态验证通过：`git diff --check`；33 个 HTML（31 个可索引、2 个预期 noindex）均通过 title、meta description、canonical、单一 H1 和 JSON-LD 解析；625 个站内链接及引用资源目标存在；`sitemap.xml` 可解析且 31 个目标存在。提交和 push 结果在本次记录完成后补充。
+
+## 2026-09-08：v1.02.00 Plaguelands 正式发布同步
+
+- 目标时间过后再次复查官方 Steam Community 新闻源，发现新公告 `Content Update Ver 1.02.00 - Plaguelands`（Sep 7）；官方 Steam News 精确链接为 `https://store.steampowered.com/news/app/3678970/view/685264090267912249`。
+- 官方事实：Plaguelands 已上线；可从 Nightmare、Hell、Torment 的 Portal UI 进入，需先通关对应难度 Stage 1-10，并至少有 30 Contamination；新增 Level 90 装备/饰品、Unique Stats、Statistics、Runes、Settings 和 Appearance 系统；新增 Dusk Wanderer 补偿皮肤，公告称免费期计划至 Sep 17；同时包含 Act Boss 宝箱、武器攻速、元素伤害、Alchemy 材料、QoL 与 bug 修复调整。
+- 更新全站当前版本标记为 `v1.02.00`，同步相关页面检查日期和 JSON-LD `dateModified`；保留更新中心中的 v1.01.05、Sep 1 目标公告和 Aug 19 开发预告作为历史语境。
+- 将 `/updates/` 改为 v1.02.00 发布说明，将 `/updates/plaguelands-update/` 从预览页改为正式版本攻略页；更新首页 patch desk、共享侧栏、官方精确来源链接和 sitemap 的首页/更新页 `lastmod`。
+- 事实边界：没有据官方发布说明推导最佳 Build、最佳 Plague Intensity、通用掉率表、EXP 路线或长期排名；这些仍需要版本化、可重复的玩家测试。
+- 静态验证通过：`git diff --check`；33 个 HTML（31 个可索引、2 个预期 noindex）通过 title、meta description、canonical、单一 H1 和 JSON-LD 解析；625 个站内链接及资源目标存在；`sitemap.xml` 可解析且 31 个目标存在。提交为 `5f5f804`（`Sync v1.02.00 Plaguelands release`）；两次 `git push origin main` 均未成功，远端仍停在 `22207ff`，本地保留包含 `2988c34`、`3e449c1`、`5f5f804` 的 3 个待推送提交，未重复重试。
