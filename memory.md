@@ -509,3 +509,12 @@
 - 将 `/updates/` 改为 v1.02.00 发布说明，将 `/updates/plaguelands-update/` 从预览页改为正式版本攻略页；更新首页 patch desk、共享侧栏、官方精确来源链接和 sitemap 的首页/更新页 `lastmod`。
 - 事实边界：没有据官方发布说明推导最佳 Build、最佳 Plague Intensity、通用掉率表、EXP 路线或长期排名；这些仍需要版本化、可重复的玩家测试。
 - 静态验证通过：`git diff --check`；33 个 HTML（31 个可索引、2 个预期 noindex）通过 title、meta description、canonical、单一 H1 和 JSON-LD 解析；625 个站内链接及资源目标存在；`sitemap.xml` 可解析且 31 个目标存在。提交为 `5f5f804`（`Sync v1.02.00 Plaguelands release`）；两次 `git push origin main` 均未成功，远端仍停在 `22207ff`，本地保留包含 `2988c34`、`3e449c1`、`5f5f804` 的 3 个待推送提交，未重复重试。
+
+## 2026-09-10：v1.02.01 / v1.02.02 官方热修复同步
+
+- 官方 Steam Community 全部新闻页显示两篇新的 Sep 8 公告：`[Urgent] Hotfix Update [Ver 1.02.01]`（`https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912314`）和 `Hotfix Update [Ver 1.02.02]`（`https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339`）。当前 released patch 更新为 `v1.02.02`。
+- v1.02.01 官方事实：修复 Plaguelands 进度间歇性重置、Nightmare 反复锁定、皮肤窗口锁定角色选择、UI 超上限显示、Sanctuary 治疗变为 1/10、Contamination 文本、技能槽冷却文字和宠物名称残留；公告称向所有玩家发送 Arcana Plague Fruit x1，受该问题影响玩家额外发送 Beyond x2。
+- v1.02.01 同时报告一个单独的未决问题：快速通关且 5 分钟内切换阶段时，Plaguelands 宝箱刷新计时器可能重置导致宝箱不出现；公告称团队仍在处理，不能把该问题写成已修复。
+- v1.02.02 官方事实：修复仅购买一个 DLC 角色时从 Plaguelands 宝箱获得未购买角色装备、Slayer Axe Spin 下一回合未触发冷却、以及未购买 DLC 角色可加入队伍的问题。
+- 更新了首页、`/updates/`、`/updates/plaguelands-update/`、`/stages/` 和 `sitemap.xml`；把此前误留的 Plaguelands preview 表述改为正式发布/热修复语境，补齐当前版本、检查日期、JSON-LD citation、精确官方链接与 FAQ。既有 `d27bb40` 已更新的其余当前页面标签/检查日期保持不变，并把 31 个 sitemap URL 的 lastmod 同步到 `2026-09-10`。
+- 不从热修复推导最佳 Build、Rune 排名、通用掉率、EXP 路线、市场价格或未确认的宝箱刷新修复状态。静态验证、提交和 push 结果由本次自动化继续记录。
