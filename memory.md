@@ -534,3 +534,9 @@
 - 官方仍明确表示“切换 Plaguelands 难度时宝箱获取计时器重置”将在后续更新修复；没有发布日期或版本号。因此没有把该问题写成已解决，也没有从更新推导完整掉率表、Rune 数值、最佳 Build、EXP 路线、排名或普遍性能保证。
 - 更新全站当前版本标签为 `v1.02.03`，同步检查日期、JSON-LD `dateModified` 和 31 个 sitemap URL；重点更新首页、共享侧栏、`/updates/`、`/updates/plaguelands-update/`、`/stages/`、`/runes/`、`/rune-tree/`、`/drop-rates/` 和 `/gear/`，保留 v1.02.00–v1.02.02 历史上下文。
 - 静态验证通过：33 个 HTML 文件（31 个可索引、2 个预期 noindex）均通过 title、meta description、canonical、单一 H1 和 JSON-LD 检查；774 个站内/资源目标存在；sitemap.xml 可解析且 31 个目标存在；`xmllint --noout sitemap.xml` 与 `git diff --check` 通过。提交和 push 结果由本次自动化记忆补充。
+
+## 2026-09-15：v1.02.03 push 阻塞修复
+
+- 自动化已完成本地提交 `507e54c1470a27632ef7d4b76bca91f15bfec399`（`Track v1.02.03 balance update`），但 HTTPS `origin` push 曾失败；手动修复时先复现 HTTPS push `Empty reply from server`。
+- 改用 GitHub SSH 推送同一提交到 `git@github.com:zhaobingkun/taskbarheroatlas.git main` 成功，随后刷新 `refs/remotes/origin/main`，本地 `main...origin/main` clean。
+- 生产验证通过：`https://taskbarheroatlas.com/`、`/updates/`、`/updates/plaguelands-update/`、`/sitemap.xml` 均 HTTP 200；线上页面可检索到 `v1.02.03`、Normal Chest 与 Stage Boss Chest 冷却/掉落机会相关文本。
