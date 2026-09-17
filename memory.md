@@ -1,5 +1,11 @@
 # Task Bar Hero 项目经验记录
 
+## 2026-09-17：Ver 1.2.4 hotfix 推送恢复
+
+- 提交 `03eb15a58c971f490bd41c6e64a33bee6c0ad8c2`（`Track Ver 1.2.4 chest hotfix`）已通过 GitHub SSH 成功推送到 `main`。
+- HTTPS 推送先后出现 `Empty reply from server` 与 `Recv failure: Connection reset by peer`；改用 `git@github.com:zhaobingkun/taskbarheroatlas.git` 后成功。
+- 已刷新并核对远端引用，本地 `HEAD` 与 `origin/main` 均为 `03eb15a58c971f490bd41c6e64a33bee6c0ad8c2`，工作树干净且无 ahead/behind。
+
 ## 2026-09-08：v1.02.00 推送与生产验证
 
 - 用户明确授权提交后的发布；通过 GitHub SSH 将 `2988c34`、`3e449c1`、`bfc8531` 推送到 `origin/main`，本地与远端最终一致于 `bfc85313f7ed8f3d680c3bc5a32bd73cd537eb24`。
