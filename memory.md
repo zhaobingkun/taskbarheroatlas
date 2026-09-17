@@ -540,3 +540,11 @@
 - 自动化已完成本地提交 `507e54c1470a27632ef7d4b76bca91f15bfec399`（`Track v1.02.03 balance update`），但 HTTPS `origin` push 曾失败；手动修复时先复现 HTTPS push `Empty reply from server`。
 - 改用 GitHub SSH 推送同一提交到 `git@github.com:zhaobingkun/taskbarheroatlas.git main` 成功，随后刷新 `refs/remotes/origin/main`，本地 `main...origin/main` clean。
 - 生产验证通过：`https://taskbarheroatlas.com/`、`/updates/`、`/updates/plaguelands-update/`、`/sitemap.xml` 均 HTTP 200；线上页面可检索到 `v1.02.03`、Normal Chest 与 Stage Boss Chest 冷却/掉落机会相关文本。
+
+## 2026-09-17：Ver 1.2.4 官方宝箱热修复同步
+
+- 复查官方 Steam Community 全部新闻页 `https://steamcommunity.com/app/3678970/allnews/?l=english`。最新公告为 `Hotfix Update [Ver 1.2.4]`，Steam 新闻页显示日期 Sep 15；本次检查日期为 Sep 17（Asia/Shanghai）。
+- 官方公告确认：修复切换阶段（包括切换 Plaguelands 难度）时宝箱获取等待时间重置、重启游戏后总是施加等待时间的问题；移除每次获取宝箱后无条件等待及两次获取间的最低等待时间，改为按一段时间内可获取的宝箱总数限制。公告未给出该总数或时间窗数值；连续获得宝箱只是官方描述的可能情况，不构成掉率或路线保证。
+- 将全站当前版本标签和共享侧栏同步为官方原文版本 `Ver 1.2.4`，刷新有当前版本/检查信息页面的检查日期及 JSON-LD `dateModified`，并将 31 个 sitemap URL 的 `lastmod` 更新为 `2026-09-17`。重点更新首页、`/updates/`、`/updates/plaguelands-update/`、`/drop-rates/`、`/drops/chests/`、`/calculators/chest-timer/`、`/stages/`、`/runes/` 和 `/rune-tree/`；保留 v1.02.03 的 Rune 节点与旧最低等待时间作为历史记录，并标注后续 Ver 1.2.4 状态。没有新增独立文章，现有更新中心和 Plaguelands 指南可以承接这项热修复。
+- 未从公告推导具体宝箱上限、时间窗、掉率、最佳刷法、Build、EXP 路线或排名。
+- 静态验证通过：33 个 HTML（31 个可索引、`404.html` 与 `privacy/index.html` 两个预期 noindex）均有 title、meta description、canonical 和单一 H1；31 个 JSON-LD 区块可解析；790 个站内链接/资源/片段目标存在；31 个 sitemap URL 均存在且 `sitemap.xml` 可解析；`xmllint --noout sitemap.xml` 与 `git diff --check` 通过。提交与 push 结果记录在每日自动化记忆中。
