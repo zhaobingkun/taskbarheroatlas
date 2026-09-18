@@ -554,3 +554,12 @@
 - 将全站当前版本标签和共享侧栏同步为官方原文版本 `Ver 1.2.4`，刷新有当前版本/检查信息页面的检查日期及 JSON-LD `dateModified`，并将 31 个 sitemap URL 的 `lastmod` 更新为 `2026-09-17`。重点更新首页、`/updates/`、`/updates/plaguelands-update/`、`/drop-rates/`、`/drops/chests/`、`/calculators/chest-timer/`、`/stages/`、`/runes/` 和 `/rune-tree/`；保留 v1.02.03 的 Rune 节点与旧最低等待时间作为历史记录，并标注后续 Ver 1.2.4 状态。没有新增独立文章，现有更新中心和 Plaguelands 指南可以承接这项热修复。
 - 未从公告推导具体宝箱上限、时间窗、掉率、最佳刷法、Build、EXP 路线或排名。
 - 静态验证通过：33 个 HTML（31 个可索引、`404.html` 与 `privacy/index.html` 两个预期 noindex）均有 title、meta description、canonical 和单一 H1；31 个 JSON-LD 区块可解析；790 个站内链接/资源/片段目标存在；31 个 sitemap URL 均存在且 `sitemap.xml` 可解析；`xmllint --noout sitemap.xml` 与 `git diff --check` 通过。提交与 push 结果记录在每日自动化记忆中。
+
+
+## 2026-09-18：官方服务器故障解决公告同步
+
+- 读取 `agents.md`、`memory.md` 和每日自动化记忆后检查工作区；`main` 工作区干净，开始时本地与 `origin/main` 对齐。
+- 复查官方 Steam Community 新闻源 `https://steamcommunity.com/app/3678970/allnews/?l=english`，最新条目为 `[Emergency Notice] Server Outage (Resolved)`，Steam 页面显示 Sep 16。正文表示服务器问题已解决，玩家应可正常登录和游玩；同一条目仍保留较早的紧急维护说明。
+- 这是服务状态公告，不是版本发布；当前最新版本仍为 `Ver 1.2.4`。官方条目未说明受影响账号范围、补偿、数据损失影响或更广泛的持续可用性保证；不推断这些内容。
+- 更新首页、`/updates/`、共享侧栏和 `sitemap.xml`：公告页新增解决状态说明与 FAQ，刷新 Sep 18 检查日期及 Article JSON-LD `dateModified`；首页说明服务器恢复状态但保留 Ver 1.2.4；只把变更页面的 sitemap `lastmod` 更新为 `2026-09-18`。
+- 静态验证通过：`git diff --check`；33 个 HTML 页面 title、meta description、canonical、单一 H1 检查通过；所有 JSON-LD 可解析，站内 href/src 与片段目标存在；`sitemap.xml` 可解析且 31 个目标存在。
