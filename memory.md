@@ -563,3 +563,9 @@
 - 这是服务状态公告，不是版本发布；当前最新版本仍为 `Ver 1.2.4`。官方条目未说明受影响账号范围、补偿、数据损失影响或更广泛的持续可用性保证；不推断这些内容。
 - 更新首页、`/updates/`、共享侧栏和 `sitemap.xml`：公告页新增解决状态说明与 FAQ，刷新 Sep 18 检查日期及 Article JSON-LD `dateModified`；首页说明服务器恢复状态但保留 Ver 1.2.4；只把变更页面的 sitemap `lastmod` 更新为 `2026-09-18`。
 - 静态验证通过：`git diff --check`；33 个 HTML 页面 title、meta description、canonical、单一 H1 检查通过；所有 JSON-LD 可解析，站内 href/src 与片段目标存在；`sitemap.xml` 可解析且 31 个目标存在。
+
+## 2026-09-24：Ver 1.2.8 官方热修复同步
+
+- 复查官方 Steam Community 全部新闻页 `https://steamcommunity.com/app/3678970/allnews/?l=english`，确认最新可验证版本为 Ver 1.2.8（Sep 22）。官方事实是：重启游戏后，Stash 中锁定物品可能意外改变 Synthesis 配方的问题已修复。
+- 保留远端已有的 Ver 1.2.4 宝箱修复和 Sep 16 服务器恢复公告作为历史与服务状态上下文；没有从 v1.2.8 推导 Rune 数值、掉率、最佳 Build、EXP 路线、排名或普遍性能保证。
+- 在远端最新 main 上同步当前版本标签、检查日期、JSON-LD、首页/更新中心文案与 31 个 sitemap URL 的 `lastmod`，并将 v1.2.4 内容保留为历史区块。静态验证通过 `git diff --check` 和 `xmllint --noout sitemap.xml`；待提交后再推送并复核线上页面。
