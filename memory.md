@@ -569,3 +569,27 @@
 - 复查官方 Steam Community 全部新闻页 `https://steamcommunity.com/app/3678970/allnews/?l=english`，确认最新可验证版本为 Ver 1.2.8（Sep 22）。官方事实是：重启游戏后，Stash 中锁定物品可能意外改变 Synthesis 配方的问题已修复。
 - 保留远端已有的 Ver 1.2.4 宝箱修复和 Sep 16 服务器恢复公告作为历史与服务状态上下文；没有从 v1.2.8 推导 Rune 数值、掉率、最佳 Build、EXP 路线、排名或普遍性能保证。
 - 在远端最新 main 上同步当前版本标签、检查日期、JSON-LD、首页/更新中心文案与 31 个 sitemap URL 的 `lastmod`，并将 v1.2.4 内容保留为历史区块。静态验证通过 `git diff --check` 和 `xmllint --noout sitemap.xml`；待提交后再推送并复核线上页面。
+
+## 2026-09-26：AdSense 低价值内容预审与收敛
+
+本节既有改动于 2026-10-14 经用户要求处理阻塞后重新审核、验证并纳入发布。
+
+- 对照 Google AdSense 的站点准备要求和 Google Search 的 people-first 内容标准检查本地站点。确认 12 个子页只有约 135–165 个英文词，主要是重复的“测试方法/未来补数据”模板，存在 Valuable inventory: low value / not enough content 风险；首页也曾出现 UNDER CONSTRUCTION、coming next 和 guide in progress 等未完成信号。
+- 将这 12 个未成熟叶子页设为 noindex,follow 并从 sitemap.xml 移除，保留页面和站内导航以便后续补充真实游戏数据：Skills、Gear Guide、Gold Farm、Stage Progression、Beginner Build、三类 Rune route、两类 Drops 子页和两类 Tier List 子页。
+- 新增 /about/ 编辑标准页，说明独立粉丝站身份、官方来源优先、证据分层、版本标签、未知数据不猜测和隐私边界；加入 sitemap 并从首页页脚链接。
+- 修复首页未完成措辞、共享侧栏遗留的 Ver 1.2.4/Sep 18 状态、Codes 页 8 月 2 日旧检查日期，以及当前页面 JSON-LD 的旧 dateModified，统一到 2026-09-24 语境。
+- 静态验证通过：34 个 HTML、20 个 indexable 页面、32 个 JSON-LD、764 个站内/资源目标、20 个 sitemap 目标；所有 sitemap 目标均为 indexable 且本地存在，xmllint --noout sitemap.xml 和 git diff --check 通过。改动尚未提交或推送，待确认后再发布。
+## 2026-09-26：12 个薄页内容加厚
+
+本节既有改动于 2026-10-14 经用户要求处理阻塞后重新审核、验证并纳入发布；12 页继续保留 noindex。
+
+- 在保留 noindex 保护的前提下，分别加厚 Skills、Gear Guide、Gold Farm、Stage Progression、Beginner Build、三类 Rune route、两类 Drops 子页和两类 Tier List 子页。新增当前版本下的官方事实、版本时间线、页面专属表格、测试记录和官方来源链接，不补写未经证实的数值、最佳 Build 或 universal ranking。
+- 12 页正文可见词数由约 135–165 提升到约 285–393；页面仍不恢复 index，等后续补充真实玩家测试记录或更具体的数据库数据后再逐页解除 noindex 并加入 sitemap。
+
+## 2026-10-14 阻塞处理与遗漏官方公告补齐
+
+- 既有 29 个 tracked 修改和 about/ 来源明确，为 9 月 26 日 AdSense/SEO 整改与薄页加厚；全部保留并重新静态验证。远端同步检查确认 main 与 origin/main 一致。
+- 官方 Steam 英文新闻源最新公告为 10 月 8 日 Server Outage (Resolved)；9 月 30 日公告列出十月 Halloween、皮肤、Relic、Runes 和十一月四个 Dungeon、技能、等级上限、难度计划。这些是未来计划，不冒充已上线版本；最新明确版本仍为 Ver 1.2.8。
+- 更新 updates、首页、sidebar 和 sitemap；侧栏改为 20 indexed pages，与 noindex 整改后的 sitemap 一致。保留原 12 页 noindex，未删除业务文件。
+- 静态验收：34 HTML、32 JSON-LD、771 本地链接/资源、20 可索引 sitemap URL；唯一 title/canonical、单一 H1、描述、站内目标、schema/XML、Node 与 diff 检查通过。
+- 静态验证通过：34 个 HTML、20 个 indexable 页面、32 个 JSON-LD、768 个站内/资源目标、20 个 sitemap 目标；所有 sitemap 目标存在且不含 noindex 页面，xmllint --noout sitemap.xml 和 git diff --check 通过。改动尚未提交或推送。
