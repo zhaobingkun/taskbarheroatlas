@@ -3,59 +3,141 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Task Bar Hero Plaguelands Guide | Ver 1.2.4 | TBH Atlas</title>
-    <meta name="description" content="Task Bar Hero Plaguelands guide: access rules, Ver 1.2.4 chest timing changes, Rune nodes and tested evidence boundaries.">
+    <title>Task Bar Hero Plaguelands Guide 1.3.0 | TBH Atlas</title>
+    <meta name="description" content="Task Bar Hero Plaguelands guide for 1.3.0: entry requirements, chest timing changes, relative drop boosts and Relic unlocks, with links for your next farming decision.">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <link rel="canonical" href="https://taskbarheroatlas.com/updates/plaguelands-update/">
     <link rel="icon" href="/assets/favicon.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Task Bar Hero Plaguelands Guide | Ver 1.2.4 | TBH Atlas">
-    <meta property="og:description" content="Official Plaguelands access rules, Ver 1.2.4 chest fixes, Rune nodes and unknown drop-rate limits.">
+    <meta property="og:title" content="Task Bar Hero Plaguelands Guide 1.3.0 | TBH Atlas">
+    <meta property="og:description" content="Plaguelands in Ver 1.3.0: access rules, chest timing, relative drop changes and Relic unlocks. Absolute drop rates remain unknown.">
     <meta property="og:url" content="https://taskbarheroatlas.com/updates/plaguelands-update/">
     <meta property="og:image" content="https://taskbarheroatlas.com/assets/atlas-farm-expedition.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Task Bar Hero Ver 1.2.4 Plaguelands Guide | TBH Atlas">
-    <meta name="twitter:description" content="Official Plaguelands access rules, hotfix facts, items, Runes and chest boundaries.">
+    <meta name="twitter:title" content="Task Bar Hero Plaguelands Guide 1.3.0 | TBH Atlas">
+    <meta name="twitter:description" content="Plaguelands entry, Ver 1.3.0 chest changes and Relic unlocks, separated from historical hotfixes and untested route advice.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/styles.css">
     <script type="application/ld+json">
-      {
-        "@context":"https://schema.org",
-        "@graph":[
-          {
-            "@type":"Article",
-            "headline":"Task Bar Hero Ver 1.2.4 Plaguelands Guide",
-            "mainEntityOfPage":"https://taskbarheroatlas.com/updates/plaguelands-update/",
-            "datePublished":"2026-09-07",
-            "dateModified":"2026-09-24",
-            "author":{"@type":"Organization","name":"Task Bar Hero Atlas"},
-            "inLanguage":"en",
-            "citation":["https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262701533","https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912314","https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339","https://steamcommunity.com/gid/103582791475158647/announcements/detail/685264090267912273","https://store.steampowered.com/news/app/3678970/view/685264090267912249","https://steamcommunity.com/app/3678970/allnews/?l=english"]
-          },
-          {
-            "@type":"FAQPage",
-            "mainEntity":[
-              {"@type":"Question","name":"What is the current Task Bar Hero version?","acceptedAnswer":{"@type":"Answer","text":"The latest official hotfix tracked is Ver 1.2.4. It fixes chest waiting-time resets after stage changes and relaunches, removes fixed minimum waits between chests, and leaves a total-per-period limit whose numeric value is not stated."}},
-              {"@type":"Question","name":"How do I enter Plaguelands?","acceptedAnswer":{"@type":"Answer","text":"Use the Portal UI on Nightmare, Hell or Torment after clearing Stage 1-10 of that difficulty, with at least 30 Contamination to enter from a normal area."}},
-              {"@type":"Question","name":"Does Ver 1.2.4 establish a best build or drop route?","acceptedAnswer":{"@type":"Answer","text":"No. Ver 1.2.4 changes chest acquisition logic but does not publish a universal drop rate or best route; repeatable testing is still needed."}}
-            ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Task Bar Hero Plaguelands Guide for Ver 1.3.0",
+      "mainEntityOfPage": "https://taskbarheroatlas.com/updates/plaguelands-update/",
+      "datePublished": "2026-09-07",
+      "dateModified": "2026-10-22",
+      "author": {
+        "@type": "Organization",
+        "name": "Task Bar Hero Atlas"
+      },
+      "inLanguage": "en",
+      "citation": [
+        "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847286114031351",
+        "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262701533",
+        "https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912314",
+        "https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339",
+        "https://steamcommunity.com/gid/103582791475158647/announcements/detail/685264090267912273",
+        "https://store.steampowered.com/news/app/3678970/view/685264090267912249",
+        "https://steamcommunity.com/app/3678970/allnews/?l=english"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the current Task Bar Hero version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The latest official version checked on October 22, 2026 is Ver 1.3.0, released October 21. It adds Halloween and Relic systems and improves Plaguelands chests."
           }
-        ]
-      }
-    </script>
+        },
+        {
+          "@type": "Question",
+          "name": "What changed about Plaguelands chest timing in Ver 1.3.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Hell and Torment, Common Treasure Chest timing changes from 5 to 4 minutes and Stage Treasure Chest timing from 7 to 6 minutes. These are the official timing labels, not a guaranteed universal chest schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Plaguelands absolute drop rates known?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No complete absolute drop table is supplied. Ver 1.3.0 publishes relative multipliers: Nightmare Common 1.75×, Hell Common 2.5×, Hell Stage 1.5×, Torment Common 3× and Torment Stage 1.66×."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I enter Plaguelands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the Portal UI on Nightmare, Hell or Torment after clearing Stage 1-10 of that difficulty, with at least 30 Contamination to enter from a normal area."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I unlock the Relic UI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clear Plaguelands once. Contaminated Reliquaries and Relics can drop from Plaguelands and Contaminated Act Boss chests, but their absolute drop chances are not stated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Halloween use the same entry requirement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Jack-o'-Lantern Canyon requires Stage 3-10 cleared on the matching difficulty and one matching Jack-o's Ticket. It is separate from the regular Plaguelands entry rule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What did the older Ver 1.2.4 hotfix fix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It fixed chest waiting-time resets after stage changes and relaunches and removed fixed minimum waits between chest acquisitions. That is historical context, not a substitute for the Ver 1.3.0 difficulty-specific changes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
   </head>
   <body>
-    <header class="site-header"><a class="brand" href="/" aria-label="Task Bar Hero Atlas home"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></a><nav aria-label="Primary navigation"><a href="/calculators/">Tools</a><a href="/tier-list/">Builds</a><a href="/runes/">Database</a><a href="/guides/exp-farm/">Guides</a></nav><a class="patch-chip" href="/updates/"><span></span>Current Ver 1.2.4</a></header>
+    <header class="site-header"><a class="brand" href="/" aria-label="Task Bar Hero Atlas home"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></a><nav aria-label="Primary navigation"><a href="/calculators/">Tools</a><a href="/tier-list/">Builds</a><a href="/runes/">Database</a><a href="/guides/exp-farm/">Guides</a></nav><a class="patch-chip" href="/updates/"><span></span>Current Ver 1.3.0</a></header>
     <main class="page-shell" id="main">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><a href="/updates/">Updates</a><span>›</span><span>Plaguelands guide</span></nav>
-      <header class="page-hero"><p class="eyebrow">RELEASE GUIDE / LAST CHECKED SEP 17, 2026</p><h1>Task Bar Hero Plaguelands guide: v1.02.00 release through Ver 1.2.4 hotfix.</h1><p class="page-lede">The official Sep 7 release and follow-up hotfixes establish Plaguelands access rules and current chest status. Ver 1.2.4 fixes stage-change and relaunch waiting-time resets and replaces fixed minimum waits with a total-per-period system. Use repeatable tests before calling a route or build best.</p></header>
+      <header class="page-hero"><p class="eyebrow">PLAGUELANDS GUIDE / CHECKED OCT 22, 2026</p><h1>Task Bar Hero Plaguelands guide: entry, chests and Relics in Ver 1.3.0.</h1><p class="page-lede">Enter through the Portal UI on Nightmare, Hell or Torment after clearing Stage 1-10 in that difficulty, with at least 30 Contamination. The Oct 21 Ver 1.3.0 update improves Plaguelands chests and adds Relics; the changes below are official facts, not a tested best farming route.</p></header>
       <figure class="context-banner"><img src="/assets/atlas-farm-expedition.webp" alt="Original pixel-art expedition path with glowing portals used as Task Bar Hero Atlas Plaguelands release artwork" width="1672" height="941" loading="eager"><figcaption>PLAGUELANDS / RELEASE GUIDE</figcaption></figure>
       <article class="content-layout">
         <div class="content-main">
-          <div class="answer-box"><strong>SHORT ANSWER</strong><p><span class="status-confirmed">Ver 1.2.4</span> is the latest official hotfix. It fixes chest waiting-time resets after changing stages (including Plaguelands difficulty) and after relaunch, then removes fixed minimum waits between chest acquisitions. The official note does not state the numeric total allowed in a period. Earlier v1.02.00-v1.02.03 access, Rune and balance facts remain historical context.</p></div>
+          <div class="answer-box"><strong>SHORT ANSWER</strong><p><span class="status-confirmed">Ver 1.3.0</span> is the latest version checked. Plaguelands Hell/Torment Common Treasure Chest timing changes from 5 to 4 minutes and Stage Treasure Chest timing from 7 to 6 minutes. Relative chest-drop chances also increase, and clearing Plaguelands once unlocks the Relic UI. These notes do not provide absolute drop percentages or guarantee a chest on a fixed schedule.</p></div>
+<section id="next-steps" aria-labelledby="next-steps-title">
+<h2 id="next-steps-title">What should I check before the next Plaguelands run?</h2>
+<div class="related-grid"><a href="/stages/"><strong>Check stage access and difficulty</strong><span>Separate regular Plaguelands access from the Halloween event requirement.</span></a><a href="/builds/"><strong>Choose a build by its bottleneck</strong><span>Use the role framework, then re-test on 1.3.0; this is not a new build ranking.</span></a><a href="/rune-tree/"><strong>Record your Rune Tree route</strong><span>Keep the goal, patch and results together before spending points.</span></a><a href="/drop-rates/"><strong>Interpret the chest-drop boosts</strong><span>Relative multipliers are not absolute percentages or guaranteed rewards.</span></a></div>
+</section>
+<section id="ver-1-3-0"><h2>What changed for Plaguelands in Ver 1.3.0?</h2>
+<p>The <a href="https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1847286114031351" target="_blank" rel="noopener noreferrer">Oct 21 official Halloween &amp; Relic update</a> lists the following chest changes. The minute values are the announcement's timing labels, not a promise of a chest at an exact interval.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>PLAGUELANDS CHEST</th><th>1.3.0 TIMING CHANGE</th><th>RELATIVE DROP CHANCE VS PREVIOUS</th></tr></thead><tbody>
+<tr><td>Nightmare Common Treasure Chest</td><td>No new timing value stated</td><td>1.75×</td></tr>
+<tr><td>Hell Common Treasure Chest</td><td>5 → 4 minutes</td><td>2.5×</td></tr>
+<tr><td>Hell Stage Treasure Chest</td><td>7 → 6 minutes</td><td>1.5×</td></tr>
+<tr><td>Torment Common Treasure Chest</td><td>5 → 4 minutes</td><td>3×</td></tr>
+<tr><td>Torment Stage Treasure Chest</td><td>7 → 6 minutes</td><td>1.66×</td></tr></tbody></table></div>
+<p>The old absolute chances are not supplied, so a 3× multiplier is not a 3% drop rate. Normal regions at Region Level 15+ have separate changes (Common 4 → 3 minutes; Stage 6 → 5 minutes); do not apply those values to Plaguelands. Portal tooltips now show Plaguelands stage bonuses, and 24 Plaguelands achievements were added.</p></section>
+<section id="relics"><h2>How do I unlock Relics through Plaguelands?</h2>
+<p>Clear Plaguelands once to unlock the Relic UI. Contaminated Reliquaries and Contaminated Relics can drop from Plaguelands chests and Contaminated Act Boss chests; the official note does not give an absolute chance. Use Cube Offering to convert a contaminated item into a random Reliquary or Relic.</p>
+<p>Reliquary inherent stats apply to the party. Uncommon and higher Reliquaries have colored slots: match the Relic color, while a White Relic fits any color. Gold-based Attunement rerolls Reliquary slot colors or a Relic's inherent-stat value; costs rise to a cap, but the announcement does not publish the exact cost table. See the <a href="/gear/">gear reference</a> before comparing an upgrade.</p></section>
+<section id="halloween-access"><h2>Is the Halloween stage the same as Plaguelands?</h2>
+<p>No. Jack-o'-Lantern Canyon requires Stage 3-10 cleared on the matching Nightmare, Hell or Torment difficulty and consumes one matching Jack-o's Ticket. It is not the regular Plaguelands Stage 1-10 / 30 Contamination entry rule. Each entry offers up to 10 regular Halloween chests; defeating the boss awards one boss chest; storage is separate (40 regular and 40 boss), and Rune effects do not apply there. The event ends November 11, 2026 at 23:59 UTC. Check the <a href="/updates/#halloween">event details and separate mailbox-gift deadlines</a>.</p></section>
           <h2>How to enter Plaguelands</h2>
           <p>The official release notes say Plaguelands is accessed through the Portal UI on Nightmare, Hell and Torment after clearing Stage 1-10 of each difficulty. Entering requires at least 30 Contamination, which is consumed while inside and recharges over time online or offline.</p>
           <div class="table-wrap"><table class="data-table"><thead><tr><th>RELEASED SYSTEM</th><th>OFFICIAL FACT</th><th>WHAT STILL NEEDS TESTING</th></tr></thead><tbody><tr><td>Plague Intensity</td><td>Higher intensity strengthens monsters and increases the chance of better rewards.</td><td>The best intensity for each account, build or farm goal.</td></tr><tr><td>Corrosion</td><td>The Cube recipe consumes items and grants Contamination instead of gold; items more than 21 levels above the Cube level cannot be used.</td><td>Efficient inputs and the best Contamination route.</td></tr><tr><td>Contaminated Soulstones</td><td>Available at Plague Intensity 6 or higher and used for Contaminated Act Bosses.</td><td>Reliable drop frequency and best boss strategy.</td></tr><tr><td>Chests</td><td>Plaguelands chests are separate; dedicated Rune nodes can increase capacity and auto-open.</td><td>Current drop samples and route rankings.</td></tr></tbody></table></div>
@@ -71,13 +153,13 @@
           <div class="table-wrap"><table class="data-table"><thead><tr><th>HISTORICAL PREVIEW</th><th>RELEASED STATUS</th><th>STILL NEEDS TESTING</th></tr></thead><tbody><tr><td>Plaguelands stage type</td><td>Released as the v1.02.00 area, with Portal access and difficulty requirements.</td><td>Best intensity and route for each account.</td></tr><tr><td>Level 90 items and new Unique Stats</td><td>Released, with official item effects and source rules listed in the patch notes.</td><td>Market value and build rankings.</td></tr><tr><td>New Runes and Skin System</td><td>Released with new Rune nodes and Dusk Wanderer compensation skins.</td><td>Best Rune paths and long-term skin availability.</td></tr></tbody></table></div>
           <p>The earlier dev note used the name Plaguelands and previewed the systems before release. The final notes use Contamination for the entry resource, add exact access rules, and list the live Rune, item, chest and skin details.</p>
           <h2>What to check before changing a build</h2>
-          <ol class="method-list"><li><strong>Attach the actual patch label.</strong> Use Ver 1.2.4 for current sessions and keep older results marked with the version used.</li><li><strong>Record the intensity and Contamination state.</strong> These conditions change the encounter and reward context.</li><li><strong>Keep chest type, difficulty and time window visible.</strong> Ver 1.2.4 removes fixed minimum waits and does not publish the total limit for a period.</li><li><strong>Compare the same activity repeatedly.</strong> New Runes, Unique Stats and hotfixes need measured tests before a ranking is useful.</li><li><strong>Keep chest and market evidence separate.</strong> The official notes changed chest composition and later hotfixes reported specific chest-related issues.</li></ol>
+          <ol class="method-list"><li><strong>Attach the actual patch label.</strong> Use Ver 1.3.0 for current sessions and keep older results marked with the version used.</li><li><strong>Record the intensity and Contamination state.</strong> These conditions change the encounter and reward context.</li><li><strong>Keep chest type, difficulty and time window visible.</strong> Keep the Ver 1.3.0 difficulty-specific timing and relative multipliers separate from the older Ver 1.2.4 system description; neither gives a universal absolute drop table.</li><li><strong>Compare the same activity repeatedly.</strong> New Runes, Unique Stats and hotfixes need measured tests before a ranking is useful.</li><li><strong>Keep chest and market evidence separate.</strong> The official notes changed chest composition and later hotfixes reported specific chest-related issues.</li></ol>
           <h2>Official source and related routes</h2>
-          <div class="related-grid"><a href="https://steamcommunity.com/app/3678970/allnews/?l=english" target="_blank" rel="noopener noreferrer"><strong>Official Ver 1.2.4 hotfix</strong><span>Open the current official Steam announcement feed.</span></a><a href="https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262701533" target="_blank" rel="noopener noreferrer"><strong>Historical v1.02.03 update</strong><span>Chest minimums and Rune-node changes before Ver 1.2.4.</span></a><a href="https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339" target="_blank" rel="noopener noreferrer"><strong>Official v1.02.02 hotfix</strong><span>Open the preceding developer fixes.</span></a><a href="https://store.steampowered.com/news/app/3678970/view/685264090267912249" target="_blank" rel="noopener noreferrer"><strong>Official v1.02.00 release notes</strong><span>Open the exact Plaguelands release announcement.</span></a><a href="/updates/"><strong>Current patch desk</strong><span>Track Ver 1.2.4 and earlier history separately.</span></a><a href="/stages/"><strong>Stage reference</strong><span>Use the versioned stage hub while route data develops.</span></a><a href="/runes/"><strong>Rune reference</strong><span>Use new Rune nodes as a current reference, not an automatic ranking.</span></a></div>
+          <div class="related-grid"><a href="https://steamcommunity.com/app/3678970/allnews/?l=english" target="_blank" rel="noopener noreferrer"><strong>Historical Ver 1.2.4 hotfix</strong><span>Open the official Steam announcement feed for earlier history.</span></a><a href="https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262701533" target="_blank" rel="noopener noreferrer"><strong>Historical v1.02.03 update</strong><span>Chest minimums and Rune-node changes before Ver 1.2.4.</span></a><a href="https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339" target="_blank" rel="noopener noreferrer"><strong>Official v1.02.02 hotfix</strong><span>Open the preceding developer fixes.</span></a><a href="https://store.steampowered.com/news/app/3678970/view/685264090267912249" target="_blank" rel="noopener noreferrer"><strong>Official v1.02.00 release notes</strong><span>Open the exact Plaguelands release announcement.</span></a><a href="/updates/"><strong>Current patch desk</strong><span>Track Ver 1.3.0 and earlier history separately.</span></a><a href="/stages/"><strong>Stage reference</strong><span>Use the versioned stage hub while route data develops.</span></a><a href="/runes/"><strong>Rune reference</strong><span>Use new Rune nodes as a current reference, not an automatic ranking.</span></a></div>
           <h2>Plaguelands update FAQ</h2>
-          <div class="faq-list"><details><summary>What is the current Task Bar Hero version?</summary><p>The latest official hotfix is Ver 1.2.4. It fixes chest waiting-time resets after stage changes and relaunches and removes fixed minimum waits between chest acquisitions.</p></details><details><summary>What did Ver 1.2.4 change about Plaguelands chest timing?</summary><p>It fixed stage-change and relaunch waiting-time resets and removed the fixed minimum wait between chest acquisitions. It describes a total-chests-per-period system but gives no numeric limit; v1.02.03 minimums are historical.</p></details><details><summary>Is the stage-change chest waiting-time reset fixed?</summary><p>Yes. Ver 1.2.4 says it fixed resets when changing stages, including Plaguelands difficulty, and fixed the wait that was always applied after relaunching.</p></details><details><summary>How do the Sep 8 known issues relate to v1.02.01?</summary><p>v1.02.01 records fixes for the stat display, Nightmare lock, Sanctuary healing, Contamination text and Plaguelands progress reset issues. It does not establish that every Plague Zone translation is correct. Ver 1.2.4 later reports fixes for chest waiting-time resets after stage changes and relaunches.</p></details><details><summary>How do I enter Plaguelands?</summary><p>Use the Portal UI on Nightmare, Hell or Torment after clearing Stage 1-10 of that difficulty, and have at least 30 Contamination to enter from a normal area.</p></details><details><summary>Are Plaguelands drop rates fully known?</summary><p>No. The official notes do not provide a complete universal drop table or a numeric total-chest limit for a period. Keep observed samples separate from official facts.</p></details></div>
+          <div class="faq-list"><details><summary>What is the current Task Bar Hero version?</summary><p>The latest official version checked on October 22, 2026 is Ver 1.3.0, released October 21. It adds Halloween and Relic systems and improves Plaguelands chests.</p></details><details><summary>What changed about Plaguelands chest timing in Ver 1.3.0?</summary><p>For Hell and Torment, Common Treasure Chest timing changes from 5 to 4 minutes and Stage Treasure Chest timing from 7 to 6 minutes. These are the official timing labels, not a guaranteed universal chest schedule.</p></details><details><summary>Are Plaguelands absolute drop rates known?</summary><p>No complete absolute drop table is supplied. Ver 1.3.0 publishes relative multipliers: Nightmare Common 1.75×, Hell Common 2.5×, Hell Stage 1.5×, Torment Common 3× and Torment Stage 1.66×.</p></details><details><summary>How do I enter Plaguelands?</summary><p>Use the Portal UI on Nightmare, Hell or Torment after clearing Stage 1-10 of that difficulty, with at least 30 Contamination to enter from a normal area.</p></details><details><summary>How do I unlock the Relic UI?</summary><p>Clear Plaguelands once. Contaminated Reliquaries and Relics can drop from Plaguelands and Contaminated Act Boss chests, but their absolute drop chances are not stated.</p></details><details><summary>Does Halloween use the same entry requirement?</summary><p>No. Jack-o'-Lantern Canyon requires Stage 3-10 cleared on the matching difficulty and one matching Jack-o's Ticket. It is separate from the regular Plaguelands entry rule.</p></details><details><summary>What did the older Ver 1.2.4 hotfix fix?</summary><p>It fixed chest waiting-time resets after stage changes and relaunches and removed fixed minimum waits between chest acquisitions. That is historical context, not a substitute for the Ver 1.3.0 difficulty-specific changes.</p></details></div>
         </div>
-        <aside class="side-note"><p>RELEASE ROUTES</p><a href="/updates/">Current patch desk →</a><a href="/stages/">Stage reference →</a><a href="/runes/">Rune reference →</a><a href="https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262701533" target="_blank" rel="noopener noreferrer">Historical v1.02.03 update ↗</a><a href="https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339" target="_blank" rel="noopener noreferrer">Official v1.02.02 hotfix ↗</a><a href="https://steamcommunity.com/gid/103582791475158647/announcements/detail/685264090267912273" target="_blank" rel="noopener noreferrer">Official known issues ↗</a><a href="https://store.steampowered.com/news/app/3678970/view/685264090267912249" target="_blank" rel="noopener noreferrer">Official v1.02.00 notes ↗</a><p>Live patch: Ver 1.2.4<br>Checked: Sep 17, 2026</p></aside>
+        <aside class="side-note"><p>RELEASE ROUTES</p><a href="/updates/">Current patch desk →</a><a href="/stages/">Stage reference →</a><a href="/runes/">Rune reference →</a><a href="https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262701533" target="_blank" rel="noopener noreferrer">Historical v1.02.03 update ↗</a><a href="https://steamcommunity.com/ogg/3678970/announcements/detail/685264090267912339" target="_blank" rel="noopener noreferrer">Official v1.02.02 hotfix ↗</a><a href="https://steamcommunity.com/gid/103582791475158647/announcements/detail/685264090267912273" target="_blank" rel="noopener noreferrer">Official known issues ↗</a><a href="https://store.steampowered.com/news/app/3678970/view/685264090267912249" target="_blank" rel="noopener noreferrer">Official v1.02.00 notes ↗</a><p>Live patch: Ver 1.3.0<br>Checked: Oct 22, 2026</p></aside>
       </article>
     </main>
     <footer class="site-footer"><div class="brand"><span class="brand-mark">✦</span><span>TBH<span>ATLAS</span></span></div><p>Independent Task Bar Hero tools &amp; guides. Not affiliated with the developer.</p><div><a href="/">Home</a><a href="/privacy/">Privacy</a></div></footer>

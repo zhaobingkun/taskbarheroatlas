@@ -593,3 +593,15 @@
 - 更新 updates、首页、sidebar 和 sitemap；侧栏改为 20 indexed pages，与 noindex 整改后的 sitemap 一致。保留原 12 页 noindex，未删除业务文件。
 - 静态验收：34 HTML、32 JSON-LD、771 本地链接/资源、20 可索引 sitemap URL；唯一 title/canonical、单一 H1、描述、站内目标、schema/XML、Node 与 diff 检查通过。
 - 静态验证通过：34 个 HTML、20 个 indexable 页面、32 个 JSON-LD、768 个站内/资源目标、20 个 sitemap 目标；所有 sitemap 目标存在且不含 noindex 页面，xmllint --noout sitemap.xml 和 git diff --check 通过。改动尚未提交或推送。
+
+## 2026-10-22：Ver 1.3.0 同步与 Plaguelands SEO
+
+- 用户分别明确回复“可以操作浏览器”和“允许，先同步版本再做SEO并发布”。本次授权仅为本次受影响页版本同步、Plaguelands 内链、验证及提交推送，不扩到其他站或恢复薄页索引。
+- 正式目录为 `/Users/zhaobingkun/Documents/taskbarhero`，发布前 clean，基线 `8ee44801d3993ae3d73f2ff18bad51f86ed442e4`；远端 main 经 ls-remote 核对一致。`dev/taskbarhero` 不混用；`.wiki/.org` 只是早期竞品研究对象，agents 已纠正站点归属。
+- 官方 Steam 10/21 `Halloween & Relic Update [Ver 1.3.0]` 已上线，另有独立 Halloween 每日邮箱礼物公告。同步首页、更新中心、Plaguelands、stages、runes、rune-tree、drop-rates、Chest Timer、EXP Farm、chests 子页、gear、pets，并将 About 页的站点当前版本标签更正，共 13 HTML；共享侧栏跟随版本，sitemap 仅 12 个实际改动且可索引页面的 lastmod 变更。保留旧版历史，不将 1.2.4 chest 修复归到 1.2.8 Stash/Synthesis hotfix。
+- 新版相对掉落倍数不是绝对概率；Hell/Torment chest 分别 5→4、7→6 分钟不改写为保证掉落时间。普通地区 Region Level 15+ 为独立 4→3、6→5。Relic UI 清一次 Plaguelands 解锁，不编完整成本/节点/掉落表或最佳路线。万圣节 Stage 3-10 + 对应 ticket 与普通 Plaguelands Stage 1-10 + 30 Contamination 分开；11/11 23:59 UTC 活动截止与 10/22 05:00 至 10/25 04:59 UTC 每日邮箱礼物分开，后者不是兑换码。普通 Synthesis 概率不套到 Relics。
+- Plaguelands 首屏事实、metadata、可见 FAQ/schema 同步 1.3.0；早期新增 stages/builds/rune-tree/drop-rates 四条按用户问题组织的静态路径。旧版已有 stages/runes 底部链接不冒充首次新增。codes、app.js、GA 配置、robots、styles 完全未改；34 HTML、20 sitemap URL、14 noindex 的策略不变（含原 12 个薄页）。
+- 只读 GSC 目标页日表 92 个唯一连续日期，严格 90 天为 07/23–10/20；目标近 28 天 61 点击/1557 日表曝光/约7.80，前 28 天 57/1422/约7.16，近 7 天 13/249、前 7 天 6/329，90 天 118/3002。UI 卡片显示约 1560/3000 属四舍五入，不把 query 表加总当完整总量。Query 有攻略和 build 意图，但数据截至 10/20，早于本次游戏版本。
+- GA4 account378657081/property546102049/stream15284733349 的 Web 数据流确认域名和 tag `G-PTMY8DNK37` 与源码一致。Organic Search 目标着陆近 28 天 141 会话/130 活跃/122 新/27秒，前 28 天119/109/109/48秒；近 7 天22/21/18/33秒，前7天21/19/16/30秒；严格90天260/235/231/37秒。关键事件仍未定义核实，不以0或短停留判失败；GSC Google搜索与 GA 全搜索引擎会话不要求相等。
+- `python3 -B scripts/verify_site.py` 8项发布回归通过：metadata、原索引策略、站内链接/锚点、20 URL sitemap集合、FAQ7条同源、版本历史、codes/计时逻辑不变、图片和外链安全。该回归固定 8ee4480 发布基线及 1.3.0 内容，未来真正日更后应审阅并更新对应断言，不把合法日更误报为本轮越界。Node syntax/diff 检查通过；1280桌面和390手机无页面横向溢出，11个其他受影响页手机布局也通过；本地timer 60min/Start/Pause功能通过。
+- 当前发布结果、SHA、生产证据和完整数据见独立报告 `/Users/zhaobingkun/Documents/Codex/2026-10-20/commit-sha-push-users-zhaobingkun-codex/outputs/seo/2026-10-22/taskbarheroatlas.com-SEO优化报告.md`。本轮是版本维护叠加SEO，并非单变量A/B；发布后10/29、11/05、11/19复盘，不因单日波动反复改同页。手机首屏既有侧栏较长是后续UX候选，未擅改全局布局；原日更继续。
