@@ -26,12 +26,12 @@ if (!existingAtlasSidebar) {
     sidebar.innerHTML = `
       <div class="sidebar-topline"><span class="signal"></span> ATLAS INDEX</div>
       <nav class="sidebar-nav" aria-label="Atlas index navigation">
-        <div><p>START HERE</p><a class="${isActive('/')}" href="/"><span>⌂</span> Home</a><a class="${isActive('/beginner-guide/')}" href="/beginner-guide/"><span>01</span> Beginner route</a><a class="${isActive('/updates/')}" href="/updates/"><span>◌</span> Patch desk</a></div>
+        <div><p>START HERE</p><a class="${isActive('/')}" href="/"><span>⌂</span> Home</a><a class="${isActive('/beginner-guide/')}" href="/beginner-guide/"><span>01</span> Beginner route</a><a class="${isActive('/updates/')}" href="/updates/"><span>◌</span> Patch desk</a><a class="${isActive('/updates/halloween-event/')}" href="/updates/halloween-event/"><span>02</span> Halloween event</a></div>
         <div><p>DATABASE</p><a class="${isActive('/runes/')}" href="/runes/"><span>✦</span> Runes</a><a class="${isActive('/rune-tree/')}" href="/rune-tree/"><span>↗</span> Rune Tree</a><a class="${isActive('/gear/')}" href="/gear/"><span>◇</span> Gear</a><a class="${isActive('/skills/')}" href="/skills/"><span>⌁</span> Skills</a><a class="${isActive('/stages/')}" href="/stages/"><span>▤</span> Stages</a><a class="${isActive('/pets/')}" href="/pets/"><span>◒</span> Pets</a></div>
         <div><p>TOOLS & ROUTES</p><a class="${isActive('/calculators/')}" href="/calculators/"><span>◷</span> Calculators</a><a class="${isActive('/calculators/chest-timer/')}" href="/calculators/chest-timer/"><span>↳</span> Chest Timer</a><a class="${isActive('/drop-rates/')}" href="/drop-rates/"><span>◈</span> Drop sources</a><a class="${isActive('/market/')}" href="/market/"><span>◫</span> Market notes</a></div>
         <div><p>COMMUNITY NOTES</p><a class="${isActive('/builds/')}" href="/builds/"><span>⚔</span> Builds</a><a class="${isActive('/tier-list/')}" href="/tier-list/"><span>≋</span> Tier Lists</a><a class="${isActive('/guides/')}" href="/guides/"><span>→</span> All Guides</a><a class="${isActive('/codes/')}" href="/codes/"><span>⌘</span> Codes check</a></div>
       </nav>
-      <div class="sidebar-status"><span></span><strong>20 PUBLIC PAGES</strong><small>English reference structure<br />Current client: Ver 1.3.2<br />Content baseline: Ver 1.3.0<br />Official check: Oct 28, 2026</small></div>`;
+      <div class="sidebar-status"><span></span><strong>21 SITEMAP PAGES</strong><small>English reference structure<br />Current client: Ver 1.3.2<br />Content baseline: Ver 1.3.0<br />Official check: Oct 28, 2026</small></div>`;
 
     const shell = document.createElement('div');
     shell.className = 'wiki-shell article-shell';

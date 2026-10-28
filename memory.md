@@ -1,5 +1,13 @@
 # Task Bar Hero 项目经验记录
 
+## 2026-10-28：Ver 1.3.2 与 Halloween 活动同步
+
+- 官方 Steam Community 新闻源最新可见版本为 `Ver 1.3.2`（Oct 26）；本次同步以 Oct 28 检查为准。官方事实包括 Halloween 活动门票按难度匹配的掉落修复、登录限制、满背包合成/许愿/制作、Relic 抗性与小数显示、超等级 Rune、物品筛选、批量存储和 Trading Ship 交互修复。
+- 新增 `/updates/halloween-event/`，区分仍持续至 `2026-11-11 23:59 UTC` 的 Jack-o'-Lantern Canyon 活动与已结束的 `Oct 22–25` 邮箱惊喜礼包；记录 Stage 3-10 入场条件、Tickets、Halloween chests、两只活动宠物和 Ver 1.3.2 门票修复。不把相对掉率写成绝对概率，也不把礼包/维护补偿写成兑换码。
+- 更新首页、`/updates/`、`/codes/`、`/builds/`、相关当前版本标签/检查日期/JSON-LD `dateModified`、共享侧栏和 sitemap；sitemap 新增 Halloween 页并保留 21 个可索引入口。
+- 报告建议加入 `/skills/`、`/guides/stage-progression/`、`/tier-list/farming/`，但这三页当前明确 `noindex`，因此不能加入 sitemap；保留 noindex 是项目 SEO 边界。
+- 静态验证通过：35 个 HTML（21 个可索引、14 个 noindex）、628 个站内链接、21 个 sitemap 目标；标题、description、canonical、单一 H1、可索引页 JSON-LD 和 sitemap 均通过，`git diff --check` 通过。
+
 ## 2026-09-17：Ver 1.2.4 hotfix 推送恢复
 
 - 提交 `03eb15a58c971f490bd41c6e64a33bee6c0ad8c2`（`Track Ver 1.2.4 chest hotfix`）已通过 GitHub SSH 成功推送到 `main`。
